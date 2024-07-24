@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Ibon Martínez-Arranz" /><link rel="canonical" href="https://github.com/imarranz/essential-guide-to-sqlite/06_advanced/065_examples.html" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Examples - Essential Guide to SQLite</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../css/custom.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Examples";
+        var mkdocs_page_input_path = "06_advanced/065_examples.md";
+        var mkdocs_page_url = "/imarranz/essential-guide-to-sqlite/06_advanced/065_examples.html";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/yaml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/python.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/bash.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../index.html" class="icon icon-home"> Essential Guide to SQLite
+        </a>
+        <div class="version">
+          1.0
+        </div><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../index.html">Essential Guide to SQLite</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Introduction to SQLite</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../01_introduction/011_overview_of_sqlite.html">Overview of SQLite</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../01_introduction/012_key_features.html">Key Features</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../01_introduction/013_use_cases.html">Use Cases</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Installing SQLite</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../02_installing/021_installation_on_linux.html">Installation on Linux</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../02_installing/022_first_steps.html">First Steps</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Using SQLite in Command Line</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../03_command/031_launching_sqlite_console.html">Launching SQLite Console</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../03_command/032_basic_commands.html">Basic Commands</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Introduction to the Northwind Database</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../04_northwind/041_overview_of_the_northwind_database.html">Overview of the Northwind Database</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../04_northwind/042_schema_and_relationships.html">Schema and Relationships</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Basic SQL Commands</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../05_basic/051_creating_tables.html">Creating Tables</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../05_basic/052_inserting_data.html">Inserting Data</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../05_basic/053_selecting_data.html">Selecting Data</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../05_basic/054_examples.html">Examples</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Advanced SQL Commands</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="061_updating_data.html">Updating Data</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="062_deleting_data.html">Deleting Data</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="063_using_where_clause.html">Using WHERE Clause</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="064_sorting_results_with_order_by.html">Sorting Results with ORDER BY</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="065_examples.html">Examples</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Complex Queries</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../07_complex/071_aggregate_functions.html">Aggregate Functions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../07_complex/072_grouping_results_with_group_by.html">Grouping Results with GROUP BY</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../07_complex/073_filtering_groups_with_having.html">Filtering Groups with HAVING</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../07_complex/074_examples.html">Examples</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Joins</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../08_joins/081_understanding_joins.html">Understanding Joins</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../08_joins/082_inner_join.html">Inner Join</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../08_joins/083_left_join.html">Left Join</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../08_joins/084_right_join.html">Right Join</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../08_joins/085_full_join.html">Full Join</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../08_joins/086_examples.html">Examples</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">SQLite with Python</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../09_python/091_setting_up_sqlite_in_python.html">Setting Up SQLite in Python</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../09_python/092_performing_basic_operations.html">Performing Basic Operations</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../09_python/093_handling_transactions.html">Handling Transactions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../09_python/094_error_handling.html">Error Handling</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../09_python/095_examples.html">Examples</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">SQLite with Jupyter</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../10_jupyter/101_installing_libraries.html">Installing Necessary Libraries</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../10_jupyter/102_running_sqlite_queries_in_jupyter.html">Running SQLite Queries in Jupyter</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../10_jupyter/103_visualizing_data_with_sqlite_and_pandas.html">Visualizing Data with SQLite and Pandas</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Additional Resources and Further Reading</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../11_resources/111_official_documentation.html">Official Documentation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../11_resources/112_community_resources.html">Community Resources</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../11_resources/113_books_and_tutorials.html">Books and Tutorials</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Essential Guide to SQLite</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html" class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
+          <li>Advanced SQL Commands &raquo;</li>
+      <li class="breadcrumb-item active">Examples</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/imarranz/essential-guide-to-sqlite/edit/master/docs/06_advanced/065_examples.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+    <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Breadcrumb Navigation">
+        <a href="064_sorting_results_with_order_by.html" class="btn btn-neutral float-left" title="Sorting Results with ORDER BY"><span class="icon icon-circle-arrow-left" aria-hidden="true"></span> Previous</a>
+        <a href="../07_complex/071_aggregate_functions.html" class="btn btn-neutral float-right" title="Aggregate Functions">Next <span class="icon icon-circle-arrow-right" aria-hidden="true"></span></a>
+    </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <div class="toc">
+<ul>
+<li><a href="#advanced_sql_commands">Advanced SQL Commands</a><ul>
+<li><a href="#examples">Examples</a><ul>
+<li><a href="#updating_data">Updating Data</a><ul>
+<li><a href="#update_a_single_row">Update a single row</a></li>
+<li><a href="#update_multiple_rows">Update multiple rows</a></li>
+<li><a href="#incrementing_values">Incrementing values</a></li>
+</ul>
+</li>
+<li><a href="#deleting_data">Deleting Data</a><ul>
+<li><a href="#delete_a_single_row">Delete a single row</a></li>
+<li><a href="#delete_multiple_rows">Delete multiple rows</a></li>
+<li><a href="#delete_all_rows_in_a_table">Delete all rows in a table</a></li>
+</ul>
+</li>
+<li><a href="#using_where_clause">Using WHERE Clause</a><ul>
+<li><a href="#select_with_where_clause">Select with WHERE clause</a></li>
+<li><a href="#update_with_where_clause">Update with WHERE clause</a></li>
+<li><a href="#delete_with_where_clause">Delete with WHERE clause</a></li>
+</ul>
+</li>
+<li><a href="#sorting_results_with_order_by">Sorting Results with ORDER BY</a><ul>
+<li><a href="#sort_by_a_single_column_in_ascending_order">Sort by a single column in ascending order</a></li>
+<li><a href="#sort_by_a_single_column_in_descending_order">Sort by a single column in descending order</a></li>
+<li><a href="#sort_by_multiple_columns">Sort by multiple columns</a></li>
+<li><a href="#combine_order_by_with_where_clause">Combine ORDER BY with WHERE clause</a></li>
+<li><a href="#sort_numeric_values">Sort numeric values</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<hr />
+<h2 id="advanced_sql_commands">Advanced SQL Commands<a class="headerlink" href="#advanced_sql_commands" title="Permanent link">#</a></h2>
+<h3 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">#</a></h3>
+<p>In this section, we'll provide extended examples of advanced SQL commands used in SQLite, demonstrating how to update, delete, and filter data, as well as sort results. Each example will include the SQL input and the expected output, with <code>LIMIT</code> applied to shorten the outputs for readability. Additionally, each example is followed by a detailed explanation of the SQL syntax used.</p>
+<h4 id="updating_data">Updating Data<a class="headerlink" href="#updating_data" title="Permanent link">#</a></h4>
+<h5 id="update_a_single_row">Update a single row<a class="headerlink" href="#update_a_single_row" title="Permanent link">#</a></h5>
+<p><strong>Input</strong>:</p>
+<pre><code class="language-sql">UPDATE users
+   SET email = 'john.newemail@example.com'
+ WHERE id = 1;
+</code></pre>
+<p><strong>Output</strong>:</p>
+<pre><code class="language-plaintext">1 row updated.
+</code></pre>
+<p><strong>Input</strong>:</p>
+<pre><code class="language-sql">SELECT * FROM users
+ WHERE id = 1
+ LIMIT 1;
+</code></pre>
+<p><strong>Output</strong>:</p>
+<pre><code class="language-plaintext">id | name     | email                     | created_at
+---|----------|---------------------------|--------------------------
+1  | John Doe | john.newemail@example.com | 2024-01-01 10:00:00
+</code></pre>
+<p><strong>Explanation</strong>:</p>
+<p>The <code>UPDATE</code> statement is used to modify existing records in a table. The <code>SET</code> clause specifies the column to be updated and its new value. The <code>WHERE</code> clause filters the rows to be updated. In this example, the <code>email</code> column of the row where <code>id</code> is 1 is updated to 'john.newemail@example.com'.</p>
+<h5 id="update_multiple_rows">Update multiple rows<a class="headerlink" href="#update_multiple_rows" title="Permanent link">#</a></h5>
+<p><strong>Input</strong>:</p>
+<pre><code class="language-sql">UPDATE users
+   SET email = 'updated@example.com'
+ WHERE name LIKE 'Alice%';
+</code></pre>
+<p><strong>Output</strong>:</p>
+<pre><code class="language-plaintext">1 row updated.
+</code></pre>
+<p><strong>Input</strong>:</p>
+<pre><code class="language-sql">SELECT * FROM users
+ WHERE name LIKE 'Alice%'
+ LIMIT 1;
+</code></pre>
+<p><strong>Output</strong>:</p>
+<pre><code class="language-plaintext">id | name          | email               | created_at
+---|---------------|---------------------|--------------------------
+2  | Alice Johnson | updated@example.com | 2024-01-01 10:01:00
+</code></pre>
+<p><strong>Explanation</strong>:</p>
+<p>The <code>UPDATE</code> statement with the <code>WHERE</code> clause can also be used to update multiple rows that meet a specific condition. The <code>LIKE</code> operator is used for pattern matching. In this example, all rows where the <code>name</code> starts with 'Alice' are updated to have the <code>email</code> set to 'updated@example.com'.</p>
+<h5 id="incrementing_values">Incrementing values<a class="headerlink" href="#incrementing_values" title="Permanent link">#</a></h5>
+<p><strong>Input</strong>:</p>
+<pre><code class="language-sql">UPDATE orders
+   SET TotalAmount = TotalAmount + 50
+ WHERE TotalAmount &lt; 300;
+</code></pre>
+<p><strong>Output</strong>:</p>
+<pre><code class="language-plaintext">2 rows updated.
+</code></pre>
+<p><strong>Input</strong>:</p>
+<pre><code class="language-sql">SELECT * FROM orders LIMIT 3;
+</code></pre>
+<p><strong>Output</strong>:</p>
+<pre><code class="language-plaintext">OrderID | CustomerID | OrderDate  | TotalAmount
+--------|------------|------------|-------------
+1       | 1          | 2024-01-01 | 200.00
+2       | 1          | 2024-01-02 | 250.00
+3       | 2          | 2024-01-03 | 300.00
+</code></pre>
+<p><strong>Explanation</strong>:</p>
+<p>The <code>UPDATE</code> statement can also be used to perform arithmetic operations on column values. In this example, the <code>TotalAmount</code> column is incremented by 50 for all rows where <code>TotalAmount</code> is less than 300.</p>
+<h4 id="deleting_data">Deleting Data<a class="headerlink" href="#deleting_data" title="Permanent link">#</a></h4>
+<h5 id="delete_a_single_row">Delete a single row<a class="headerlink" href="#delete_a_single_row" title="Permanent link">#</a></h5>
+<p><strong>Input</strong>:</p>
+<pre><code class="language-sql">DELETE FROM users
+ WHERE id = 1;
+</code></pre>
+<p><strong>Output</strong>:</p>
+<pre><code class="language-plaintext">1 row deleted.
+</code></pre>
+<p><strong>Input</strong>:</p>
+<pre><code class="language-sql">SELECT * FROM users LIMIT 3;
+</code></pre>
+<p><strong>Output</strong>:</p>
+<pre><code class="language-plaintext">id | name          | email                     | created_at
+---|---------------|---------------------------|--------------------------
+2  | Alice Johnson | alice.johnson@example.com | 2024-01-01 10:01:00
+3  | Bob Smith     | bob.smith@example.com     | 2024-01-01 10:02:00
+</code></pre>
+<p><strong>Explanation</strong>:</p>
+<p>The <code>DELETE</code> statement is used to remove rows from a table. The <code>WHERE</code> clause specifies which rows should be deleted. In this example, the row where <code>id</code> is 1 is deleted from the <code>users</code> table.</p>
+<h5 id="delete_multiple_rows">Delete multiple rows<a class="headerlink" href="#delete_multiple_rows" title="Permanent link">#</a></h5>
+<p><strong>Input</strong>:</p>
+<pre><code class="language-sql">DELETE FROM users
+ WHERE name LIKE 'Bob%';
+</code></pre>
+<p><strong>Output</strong>:</p>
+<pre><code class="language-plaintext">1 row deleted.
+</code></pre>
+<p><strong>Input</strong>:</p>
+<pre><code class="language-sql">SELECT * FROM users LIMIT 3;
+</code></pre>
+<p><strong>Output</strong>:</p>
+<pre><code class="language-plaintext">id | name          | email                     | created_at
+---|---------------|---------------------------|--------------------------
+2  | Alice Johnson | alice.johnson@example.com | 2024-01-01 10:01:00
+</code></pre>
+<p><strong>Explanation</strong>:</p>
+<p>The <code>DELETE</code> statement can also be used to delete multiple rows that match a specific condition. In this example, all rows where the <code>name</code> starts with 'Bob' are deleted from the <code>users</code> table.</p>
+<h5 id="delete_all_rows_in_a_table">Delete all rows in a table<a class="headerlink" href="#delete_all_rows_in_a_table" title="Permanent link">#</a></h5>
+<p><strong>Input</strong>:</p>
+<pre><code class="language-sql">DELETE FROM orders;
+</code></pre>
+<p><strong>Output</strong>:</p>
+<pre><code class="language-plaintext">4 rows deleted.
+</code></pre>
+<p><strong>Input</strong>:</p>
+<pre><code class="language-sql">SELECT * FROM orders LIMIT 3;
+</code></pre>
+<p><strong>Output</strong>:</p>
+<pre><code class="language-plaintext">OrderID | CustomerID | OrderDate  | TotalAmount
+--------|------------|------------|-------------
+</code></pre>
+<p><em>Note: The table is empty after the delete operation.</em></p>
+<p><strong>Explanation</strong>:</p>
+<p>To delete all rows in a table without removing the table itself, the <code>DELETE</code> statement is used without a <code>WHERE</code> clause. In this example, all rows are deleted from the <code>orders</code> table.</p>
+<h4 id="using_where_clause">Using WHERE Clause<a class="headerlink" href="#using_where_clause" title="Permanent link">#</a></h4>
+<h5 id="select_with_where_clause">Select with WHERE clause<a class="headerlink" href="#select_with_where_clause" title="Permanent link">#</a></h5>
+<p><strong>Input</strong>:</p>
+<pre><code class="language-sql">SELECT * FROM users
+ WHERE name = 'John Doe'
+ LIMIT 1;
+</code></pre>
+<p><strong>Output</strong>:</p>
+<pre><code class="language-plaintext">id | name     | email                | created_at
+---|----------|----------------------|--------------------------
+1  | John Doe | john.doe@example.com | 2024-01-01 10:00:00
+</code></pre>
+<p><strong>Explanation</strong>:</p>
+<p>The <code>WHERE</code> clause is used to filter records based on a specified condition. In this example, the query selects all columns from the <code>users</code> table where the <code>name</code> is 'John Doe'.</p>
+<h5 id="update_with_where_clause">Update with WHERE clause<a class="headerlink" href="#update_with_where_clause" title="Permanent link">#</a></h5>
+<p><strong>Input</strong>:</p>
+<pre><code class="language-sql">UPDATE users
+   SET email = 'john.newemail@example.com'
+ WHERE name = 'John Doe';
+</code></pre>
+<p><strong>Output</strong>:</p>
+<pre><code class="language-plaintext">1 row updated.
+</code></pre>
+<p><strong>Input</strong>:</p>
+<pre><code class="language-sql">SELECT * FROM users
+ WHERE name = 'John Doe'
+ LIMIT 1;
+</code></pre>
+<p><strong>Output</strong>:</p>
+<pre><code class="language-plaintext">id | name     | email                     | created_at
+---|----------|---------------------------|--------------------------
+1  | John Doe | john.newemail@example.com | 2024-01-01 10:00:00
+</code></pre>
+<p><strong>Explanation</strong>:</p>
+<p>The <code>WHERE</code> clause can also be used with the <code>UPDATE</code> statement to specify which rows should be updated. In this example, the <code>email</code> column is updated for all rows where the <code>name</code> is 'John Doe'.</p>
+<h5 id="delete_with_where_clause">Delete with WHERE clause<a class="headerlink" href="#delete_with_where_clause" title="Permanent link">#</a></h5>
+<p><strong>Input</strong>:</p>
+<pre><code class="language-sql">DELETE FROM users
+ WHERE name = 'Bob Smith';
+</code></pre>
+<p><strong>Output</strong>:</p>
+<pre><code class="language-plaintext">1 row deleted.
+</code></pre>
+<p><strong>Input</strong>:</p>
+<pre><code class="language-sql">SELECT * FROM users LIMIT 3;
+</code></pre>
+<p><strong>Output</strong>:</p>
+<pre><code class="language-plaintext">id | name          | email                     | created_at
+---|---------------|---------------------------|--------------------------
+2  | Alice Johnson | alice.johnson@example.com | 2024-01-01 10:01:00
+</code></pre>
+<p><strong>Explanation</strong>:</p>
+<p>The <code>WHERE</code> clause is used with the <code>DELETE</code> statement to specify which rows should be removed. In this example, the row where the <code>name</code> is 'Bob Smith' is deleted from the <code>users</code> table.</p>
+<h4 id="sorting_results_with_order_by">Sorting Results with ORDER BY<a class="headerlink" href="#sorting_results_with_order_by" title="Permanent link">#</a></h4>
+<h5 id="sort_by_a_single_column_in_ascending_order">Sort by a single column in ascending order<a class="headerlink" href="#sort_by_a_single_column_in_ascending_order" title="Permanent link">#</a></h5>
+<p><strong>Input</strong>:</p>
+<pre><code class="language-sql">SELECT * FROM users
+ ORDER BY name ASC
+ LIMIT 3;
+</code></pre>
+<p><strong>Output</strong>:</p>
+<pre><code class="language-plaintext">id | name          | email                     | created_at
+---|---------------|---------------------------|--------------------------
+2  | Alice Johnson | alice.johnson@example.com | 2024-01-01 10:01:00
+3  | Bob Smith     | bob.smith@example.com     | 2024-01-01 10:02:00
+1  | John Doe      | john.doe@example.com      | 2024-01-01 10:00:00
+</code></pre>
+<p><strong>Explanation</strong>:</p>
+<p>The <code>ORDER BY</code> clause is used to sort the result set of a query by one or more columns. By default, the sorting is in ascending order (<code>ASC</code>). In this example, the query selects all columns from the <code>users</code> table and sorts the results by the <code>name</code> column in ascending order.</p>
+<h5 id="sort_by_a_single_column_in_descending_order">Sort by a single column in descending order<a class="headerlink" href="#sort_by_a_single_column_in_descending_order" title="Permanent link">#</a></h5>
+<p><strong>Input</strong>:</p>
+<pre><code class="language-sql">SELECT * FROM users
+ ORDER BY name DESC
+ LIMIT 3;
+</code></pre>
+<p><strong>Output</strong>:</p>
+<pre><code class="language-plaintext">id | name          | email                     | created_at
+---|---------------|---------------------------|--------------------------
+1  | John Doe      | john.doe@example.com      | 2024-01-01 10:00:00
+3  | Bob Smith     | bob.smith@example.com     | 2024-01-01 10:02:00
+2  | Alice Johnson | alice.johnson@example.com | 2024-01-01 10:01:00
+</code></pre>
+<p><strong>Explanation</strong>:</p>
+<p>To sort the results in descending order, the <code>DESC</code> keyword is used with the <code>ORDER BY</code> clause. In this example, the query selects all columns from the <code>users</code> table and sorts the results by the <code>name</code> column in descending order.</p>
+<h5 id="sort_by_multiple_columns">Sort by multiple columns<a class="headerlink" href="#sort_by_multiple_columns" title="Permanent link">#</a></h5>
+<p><strong>Input</strong>:</p>
+<pre><code class="language-sql">SELECT * FROM orders
+ ORDER BY CustomerID ASC, TotalAmount DESC
+ LIMIT 3;
+</code></pre>
+<p><strong>Output</strong>:</p>
+<pre><code class="language-plaintext">OrderID | CustomerID | OrderDate  | TotalAmount
+--------|------------|------------|-------------
+2       | 1          | 2024-01-02 | 200.00
+1       | 1          | 2024-01-01 | 150.00
+3       | 2          | 2024-01-03 | 300.00
+</code></pre>
+<p><strong>Explanation</strong>:</p>
+<p>The <code>ORDER BY</code> clause can be used to sort the results by multiple columns. The sorting priority is from left to right. In this example, the query selects all columns from the <code>orders</code> table and sorts the results by <code>CustomerID</code> in ascending order and <code>TotalAmount</code> in descending order.</p>
+<h5 id="combine_order_by_with_where_clause">Combine ORDER BY with WHERE clause<a class="headerlink" href="#combine_order_by_with_where_clause" title="Permanent link">#</a></h5>
+<p><strong>Input</strong>:</p>
+<pre><code class="language-sql">SELECT * FROM users
+ WHERE email LIKE '%example.com'
+ ORDER BY created_at DESC
+ LIMIT 3;
+</code></pre>
+<p><strong>Output</strong>:</p>
+<pre><code class="language-plaintext">id | name          | email                     | created_at
+---|---------------|---------------------------|--------------------------
+3  | Bob Smith     | bob.smith@example.com     | 2024-01-01 10:02:00
+2  | Alice Johnson | alice.johnson@example.com | 2024-01-01 10:01:00
+1  | John Doe      | john.doe@example.com      | 2024-01-01 10:00:00
+</code></pre>
+<p><strong>Explanation</strong>:</p>
+<p>The <code>ORDER BY</code> clause can be combined with the <code>WHERE</code> clause to filter and sort the results. In this example, the query selects all columns from the <code>users</code> table where the <code>email</code> contains 'example.com' and sorts the results by the <code>created_at</code> column in descending order.</p>
+<h5 id="sort_numeric_values">Sort numeric values<a class="headerlink" href="#sort_numeric_values" title="Permanent link">#</a></h5>
+<p><strong>Input</strong>:</p>
+<pre><code class="language-sql">SELECT * FROM orders
+ ORDER BY TotalAmount ASC
+ LIMIT 3;
+</code></pre>
+<p><strong>Output</strong>:</p>
+<pre><code class="language-plaintext">OrderID | CustomerID | OrderDate  | TotalAmount
+--------|------------|------------|-------------
+1       | 1          | 2024-01-01 | 150.00
+2       | 1          | 2024-01-02 | 200.00
+3       | 2          | 2024-01-03 | 300.00
+</code></pre>
+<p><strong>Input</strong>:</p>
+<pre><code class="language-sql">SELECT * FROM orders
+ ORDER BY TotalAmount DESC
+ LIMIT 3;
+</code></pre>
+<p><strong>Output</strong>:</p>
+<pre><code class="language-plaintext">OrderID | CustomerID | OrderDate  | TotalAmount
+--------|------------|------------|-------------
+4       | 3          | 2024-01-04 | 450.00
+3       | 2          | 2024-01-03 | 300.00
+2       | 1          | 2024-01-02 | 200.00
+</code></pre>
+<p><strong>Explanation</strong>:</p>
+<p>The <code>ORDER BY</code> clause is used to sort numeric values in ascending or descending order. In the first query, the <code>orders</code> table is sorted by <code>TotalAmount</code> in ascending order. In the second query, the same table is sorted by <code>TotalAmount</code> in descending order.</p>
+<p>By practicing these extended examples, you can effectively utilize SQLite's advanced SQL commands to manage and query your data more efficiently. These examples demonstrate how to update, delete, filter, and sort data using various SQL clauses and operators.</p>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+      <p><b>Essential Guide to SQLite</b> <br>Copyright &#169; 2024 <a href="https://github.com/imarranz">Ibon Martínez-Arranz</a><br></p>
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/imarranz/essential-guide-to-sqlite" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="064_sorting_results_with_order_by.html" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../07_complex/071_aggregate_functions.html" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Ibon Martínez-Arranz" /><link rel="canonical" href="https://github.com/imarranz/essential-guide-to-sqlite/07_complex/072_grouping_results_with_group_by.html" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Grouping Results with GROUP BY - Essential Guide to SQLite</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../css/custom.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Grouping Results with GROUP BY";
+        var mkdocs_page_input_path = "07_complex/072_grouping_results_with_group_by.md";
+        var mkdocs_page_url = "/imarranz/essential-guide-to-sqlite/07_complex/072_grouping_results_with_group_by.html";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/yaml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/python.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/bash.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../index.html" class="icon icon-home"> Essential Guide to SQLite
+        </a>
+        <div class="version">
+          1.0
+        </div><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../index.html">Essential Guide to SQLite</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Introduction to SQLite</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../01_introduction/011_overview_of_sqlite.html">Overview of SQLite</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../01_introduction/012_key_features.html">Key Features</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../01_introduction/013_use_cases.html">Use Cases</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Installing SQLite</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../02_installing/021_installation_on_linux.html">Installation on Linux</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../02_installing/022_first_steps.html">First Steps</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Using SQLite in Command Line</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../03_command/031_launching_sqlite_console.html">Launching SQLite Console</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../03_command/032_basic_commands.html">Basic Commands</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Introduction to the Northwind Database</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../04_northwind/041_overview_of_the_northwind_database.html">Overview of the Northwind Database</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../04_northwind/042_schema_and_relationships.html">Schema and Relationships</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Basic SQL Commands</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../05_basic/051_creating_tables.html">Creating Tables</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../05_basic/052_inserting_data.html">Inserting Data</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../05_basic/053_selecting_data.html">Selecting Data</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../05_basic/054_examples.html">Examples</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Advanced SQL Commands</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../06_advanced/061_updating_data.html">Updating Data</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../06_advanced/062_deleting_data.html">Deleting Data</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../06_advanced/063_using_where_clause.html">Using WHERE Clause</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../06_advanced/064_sorting_results_with_order_by.html">Sorting Results with ORDER BY</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../06_advanced/065_examples.html">Examples</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Complex Queries</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="071_aggregate_functions.html">Aggregate Functions</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="072_grouping_results_with_group_by.html">Grouping Results with GROUP BY</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="073_filtering_groups_with_having.html">Filtering Groups with HAVING</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="074_examples.html">Examples</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Joins</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../08_joins/081_understanding_joins.html">Understanding Joins</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../08_joins/082_inner_join.html">Inner Join</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../08_joins/083_left_join.html">Left Join</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../08_joins/084_right_join.html">Right Join</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../08_joins/085_full_join.html">Full Join</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../08_joins/086_examples.html">Examples</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">SQLite with Python</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../09_python/091_setting_up_sqlite_in_python.html">Setting Up SQLite in Python</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../09_python/092_performing_basic_operations.html">Performing Basic Operations</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../09_python/093_handling_transactions.html">Handling Transactions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../09_python/094_error_handling.html">Error Handling</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../09_python/095_examples.html">Examples</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">SQLite with Jupyter</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../10_jupyter/101_installing_libraries.html">Installing Necessary Libraries</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../10_jupyter/102_running_sqlite_queries_in_jupyter.html">Running SQLite Queries in Jupyter</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../10_jupyter/103_visualizing_data_with_sqlite_and_pandas.html">Visualizing Data with SQLite and Pandas</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Additional Resources and Further Reading</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../11_resources/111_official_documentation.html">Official Documentation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../11_resources/112_community_resources.html">Community Resources</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../11_resources/113_books_and_tutorials.html">Books and Tutorials</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Essential Guide to SQLite</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html" class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
+          <li>Complex Queries &raquo;</li>
+      <li class="breadcrumb-item active">Grouping Results with GROUP BY</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/imarranz/essential-guide-to-sqlite/edit/master/docs/07_complex/072_grouping_results_with_group_by.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+    <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Breadcrumb Navigation">
+        <a href="071_aggregate_functions.html" class="btn btn-neutral float-left" title="Aggregate Functions"><span class="icon icon-circle-arrow-left" aria-hidden="true"></span> Previous</a>
+        <a href="073_filtering_groups_with_having.html" class="btn btn-neutral float-right" title="Filtering Groups with HAVING">Next <span class="icon icon-circle-arrow-right" aria-hidden="true"></span></a>
+    </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <div class="toc">
+<ul>
+<li><a href="#complex_queries">Complex Queries</a><ul>
+<li><a href="#grouping_results_with_group_by">Grouping Results with GROUP BY</a><ul>
+<li><a href="#syntax">Syntax</a></li>
+<li><a href="#examples">Examples</a><ul>
+<li><a href="#basic_group_by">Basic GROUP BY</a></li>
+<li><a href="#group_by_with_sum">GROUP BY with SUM</a></li>
+<li><a href="#group_by_with_avg">GROUP BY with AVG</a></li>
+<li><a href="#group_by_with_min">GROUP BY with MIN</a></li>
+<li><a href="#group_by_with_max">GROUP BY with MAX</a></li>
+<li><a href="#group_by_with_having_clause">GROUP BY with HAVING Clause</a></li>
+<li><a href="#group_by_multiple_columns">GROUP BY Multiple Columns</a></li>
+</ul>
+</li>
+<li><a href="#workflow">Workflow</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<hr />
+<h2 id="complex_queries">Complex Queries<a class="headerlink" href="#complex_queries" title="Permanent link">#</a></h2>
+<h3 id="grouping_results_with_group_by">Grouping Results with GROUP BY<a class="headerlink" href="#grouping_results_with_group_by" title="Permanent link">#</a></h3>
+<p>The <code>GROUP BY</code> clause is used to arrange identical data into groups. It is often used in conjunction with aggregate functions to perform calculations on each group of data. This section will guide you through the syntax and provide examples to help you understand how to use <code>GROUP BY</code> effectively.</p>
+<h4 id="syntax">Syntax<a class="headerlink" href="#syntax" title="Permanent link">#</a></h4>
+<p>The basic syntax for using <code>GROUP BY</code> in SQLite is as follows:</p>
+<pre><code class="language-sql">SELECT column1_name, aggregate_function(column2_name)
+  FROM table_name
+ WHERE condition
+ GROUP BY column1_name;
+</code></pre>
+<ul>
+<li>
+<p><strong>column1_name</strong>: The name of the column to group by.</p>
+</li>
+<li>
+<p><strong>aggregate_function</strong>: The aggregate function to be applied (e.g., <code>COUNT</code>, <code>SUM</code>, <code>AVG</code>).</p>
+</li>
+<li>
+<p><strong>column2_name</strong>: The name of the column on which the aggregate function is applied.</p>
+</li>
+<li>
+<p><strong>table_name</strong>: The name of the table from which to retrieve data.</p>
+</li>
+<li>
+<p><strong>condition</strong>: An optional condition to filter the rows before grouping.</p>
+</li>
+</ul>
+<h4 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">#</a></h4>
+<h5 id="basic_group_by">Basic GROUP BY<a class="headerlink" href="#basic_group_by" title="Permanent link">#</a></h5>
+<p><strong>Input</strong>:</p>
+<pre><code class="language-sql">SELECT CustomerID, COUNT(*) FROM orders
+ GROUP BY CustomerID
+ LIMIT 3;
+</code></pre>
+<p><strong>Output</strong>:</p>
+<pre><code class="language-plaintext">CustomerID | COUNT(*)
+-----------|---------
+1          | 2
+2          | 1
+3          | 1
+</code></pre>
+<p><strong>Explanation</strong>:</p>
+<p>The <code>GROUP BY</code> clause groups the rows that have the same values in the <code>CustomerID</code> column. The <code>COUNT</code> function is then used to count the number of orders for each customer.</p>
+<h5 id="group_by_with_sum">GROUP BY with SUM<a class="headerlink" href="#group_by_with_sum" title="Permanent link">#</a></h5>
+<p><strong>Input</strong>:</p>
+<pre><code class="language-sql">SELECT CustomerID, SUM(TotalAmount) FROM orders
+ GROUP BY CustomerID
+ LIMIT 3;
+</code></pre>
+<p><strong>Output</strong>:</p>
+<pre><code class="language-plaintext">CustomerID | SUM(TotalAmount)
+-----------|-----------------
+1          | 350.0
+2          | 300.0
+3          | 450.0
+</code></pre>
+<p><strong>Explanation</strong>:
+The <code>GROUP BY</code> clause groups the rows by <code>CustomerID</code>, and the <code>SUM</code> function calculates the total <code>TotalAmount</code> for each customer.</p>
+<h5 id="group_by_with_avg">GROUP BY with AVG<a class="headerlink" href="#group_by_with_avg" title="Permanent link">#</a></h5>
+<p><strong>Input</strong>:</p>
+<pre><code class="language-sql">SELECT CustomerID, AVG(TotalAmount) FROM orders GROUP BY CustomerID LIMIT 3;
+</code></pre>
+<p><strong>Output</strong>:</p>
+<pre><code class="language-plaintext">CustomerID | AVG(TotalAmount)
+-----------|-----------------
+1          | 175.0
+2          | 300.0
+3          | 450.0
+</code></pre>
+<p><strong>Explanation</strong>:</p>
+<p>The <code>GROUP BY</code> clause groups the rows by <code>CustomerID</code>, and the <code>AVG</code> function calculates the average <code>TotalAmount</code> for each customer.</p>
+<h5 id="group_by_with_min">GROUP BY with MIN<a class="headerlink" href="#group_by_with_min" title="Permanent link">#</a></h5>
+<p><strong>Input</strong>:</p>
+<pre><code class="language-sql">SELECT CustomerID, MIN(TotalAmount) FROM orders GROUP BY CustomerID LIMIT 3;
+</code></pre>
+<p><strong>Output</strong>:</p>
+<pre><code class="language-plaintext">CustomerID | MIN(TotalAmount)
+-----------|-----------------
+1          | 150.0
+2          | 300.0
+3          | 450.0
+</code></pre>
+<p><strong>Explanation</strong>:
+The <code>GROUP BY</code> clause groups the rows by <code>CustomerID</code>, and the <code>MIN</code> function finds the minimum <code>TotalAmount</code> for each customer.</p>
+<h5 id="group_by_with_max">GROUP BY with MAX<a class="headerlink" href="#group_by_with_max" title="Permanent link">#</a></h5>
+<p><strong>Input</strong>:</p>
+<pre><code class="language-sql">SELECT CustomerID, MAX(TotalAmount) FROM orders
+ GROUP BY CustomerID
+ LIMIT 3;
+</code></pre>
+<p><strong>Output</strong>:</p>
+<pre><code class="language-plaintext">CustomerID | MAX(TotalAmount)
+-----------|-----------------
+1          | 200.0
+2          | 300.0
+3          | 450.0
+</code></pre>
+<p><strong>Explanation</strong>:
+The <code>GROUP BY</code> clause groups the rows by <code>CustomerID</code>, and the <code>MAX</code> function finds the maximum <code>TotalAmount</code> for each customer.</p>
+<h5 id="group_by_with_having_clause">GROUP BY with HAVING Clause<a class="headerlink" href="#group_by_with_having_clause" title="Permanent link">#</a></h5>
+<p><strong>Input</strong>:</p>
+<pre><code class="language-sql">SELECT CustomerID, SUM(TotalAmount) FROM orders
+ GROUP BY CustomerID
+HAVING SUM(TotalAmount) &gt; 300
+ LIMIT 3;
+</code></pre>
+<p><strong>Output</strong>:</p>
+<pre><code class="language-plaintext">CustomerID | SUM(TotalAmount)
+-----------|-----------------
+3          | 450.0
+</code></pre>
+<p><strong>Explanation</strong>:</p>
+<p>The <code>HAVING</code> clause is used to filter groups based on a condition involving aggregate functions. In this example, it groups the orders by <code>CustomerID</code> and selects only those groups where the total sum of <code>TotalAmount</code> is greater than 300.</p>
+<h5 id="group_by_multiple_columns">GROUP BY Multiple Columns<a class="headerlink" href="#group_by_multiple_columns" title="Permanent link">#</a></h5>
+<p><strong>Input</strong>:</p>
+<pre><code class="language-sql">SELECT CustomerID, OrderDate, COUNT(*) FROM orders
+ GROUP BY CustomerID, OrderDate
+ LIMIT 3;
+</code></pre>
+<p><strong>Output</strong>:</p>
+<pre><code class="language-plaintext">CustomerID | OrderDate  | COUNT(*)
+-----------|------------|---------
+1          | 2024-01-01 | 1
+1          | 2024-01-02 | 1
+2          | 2024-01-03 | 1
+</code></pre>
+<p><strong>Explanation</strong>:</p>
+<p>The <code>GROUP BY</code> clause can group by multiple columns. In this example, it groups the rows by both <code>CustomerID</code> and <code>OrderDate</code>, and the <code>COUNT</code> function counts the number of orders for each group.</p>
+<h4 id="workflow">Workflow<a class="headerlink" href="#workflow" title="Permanent link">#</a></h4>
+<p>To illustrate a typical workflow in using <code>GROUP BY</code> with aggregate functions, let's go through a simple example:</p>
+<ol>
+<li><strong>Create a Database</strong>:</li>
+</ol>
+<pre><code class="language-bash">sqlite3 example.db
+</code></pre>
+<ol>
+<li><strong>Create Tables</strong>:</li>
+</ol>
+<pre><code class="language-sql">CREATE TABLE users (
+    id INTEGER PRIMARY KEY,
+    name TEXT NOT NULL,
+    email TEXT UNIQUE NOT NULL,
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE orders (
+    OrderID INTEGER PRIMARY KEY,
+    CustomerID INTEGER,
+    OrderDate DATETIME,
+    TotalAmount REAL,
+    FOREIGN KEY (CustomerID) REFERENCES users(id)
+);
+</code></pre>
+<ol>
+<li><strong>Insert Data</strong>:</li>
+</ol>
+<pre><code class="language-sql">INSERT INTO users (name, email) VALUES ('John Doe', 'john.doe@example.com');
+INSERT INTO users (name, email) VALUES ('Alice Johnson', 'alice.johnson@example.com');
+INSERT INTO users (name, email) VALUES ('Bob Smith', 'bob.smith@example.com');
+
+INSERT INTO orders (CustomerID, OrderDate, TotalAmount) VALUES (1, '2024-01-01', 150.00);
+INSERT INTO orders (CustomerID, OrderDate, TotalAmount) VALUES (1, '2024-01-02', 200.00);
+INSERT INTO orders (CustomerID, OrderDate, TotalAmount) VALUES (2, '2024-01-03', 300.00);
+INSERT INTO orders (CustomerID, OrderDate, TotalAmount) VALUES (3, '2024-01-04', 450.00);
+</code></pre>
+<ol>
+<li><strong>Use GROUP BY</strong>:</li>
+</ol>
+<pre><code class="language-sql">-- Group by CustomerID and count the number of orders for each customer
+SELECT CustomerID, COUNT(*) FROM orders
+ GROUP BY CustomerID
+ LIMIT 3;
+
+-- Group by CustomerID and calculate the total sum of TotalAmount for each customer
+SELECT CustomerID, SUM(TotalAmount) FROM orders
+ GROUP BY CustomerID
+ LIMIT 3;
+
+-- Group by CustomerID and calculate the average TotalAmount for each customer
+SELECT CustomerID, AVG(TotalAmount) FROM orders
+ GROUP BY CustomerID
+ LIMIT 3;
+
+-- Group by CustomerID and find the minimum TotalAmount for each customer
+SELECT CustomerID, MIN(TotalAmount) FROM orders
+ GROUP BY CustomerID
+ LIMIT 3;
+
+-- Group by CustomerID and find the maximum TotalAmount for each customer
+SELECT CustomerID, MAX(TotalAmount) FROM orders
+ GROUP BY CustomerID
+ LIMIT 3;
+
+-- Group by CustomerID and select only those groups
+-- where the total sum of TotalAmount is greater than 300
+SELECT CustomerID, SUM(TotalAmount) FROM orders
+ GROUP BY CustomerID
+HAVING SUM(TotalAmount) &gt; 300
+ LIMIT 3;
+
+-- Group by multiple columns: CustomerID and OrderDate,
+-- and count the number of orders for each group
+SELECT CustomerID, OrderDate, COUNT(*) FROM orders
+ GROUP BY CustomerID, OrderDate
+ LIMIT 3;
+</code></pre>
+<p>By mastering the <code>GROUP BY</code> clause and its various usages with aggregate functions, you can effectively group and analyze data in your SQLite database. The <code>GROUP BY</code> clause is essential for summarizing data and performing complex data analysis.</p>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+      <p><b>Essential Guide to SQLite</b> <br>Copyright &#169; 2024 <a href="https://github.com/imarranz">Ibon Martínez-Arranz</a><br></p>
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/imarranz/essential-guide-to-sqlite" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="071_aggregate_functions.html" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="073_filtering_groups_with_having.html" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

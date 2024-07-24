@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Ibon Martínez-Arranz" /><link rel="canonical" href="https://github.com/imarranz/essential-guide-to-sqlite/09_python/092_performing_basic_operations.html" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Performing Basic Operations - Essential Guide to SQLite</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../css/custom.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Performing Basic Operations";
+        var mkdocs_page_input_path = "09_python/092_performing_basic_operations.md";
+        var mkdocs_page_url = "/imarranz/essential-guide-to-sqlite/09_python/092_performing_basic_operations.html";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/yaml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/python.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/bash.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../index.html" class="icon icon-home"> Essential Guide to SQLite
+        </a>
+        <div class="version">
+          1.0
+        </div><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../index.html">Essential Guide to SQLite</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Introduction to SQLite</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../01_introduction/011_overview_of_sqlite.html">Overview of SQLite</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../01_introduction/012_key_features.html">Key Features</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../01_introduction/013_use_cases.html">Use Cases</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Installing SQLite</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../02_installing/021_installation_on_linux.html">Installation on Linux</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../02_installing/022_first_steps.html">First Steps</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Using SQLite in Command Line</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../03_command/031_launching_sqlite_console.html">Launching SQLite Console</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../03_command/032_basic_commands.html">Basic Commands</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Introduction to the Northwind Database</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../04_northwind/041_overview_of_the_northwind_database.html">Overview of the Northwind Database</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../04_northwind/042_schema_and_relationships.html">Schema and Relationships</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Basic SQL Commands</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../05_basic/051_creating_tables.html">Creating Tables</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../05_basic/052_inserting_data.html">Inserting Data</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../05_basic/053_selecting_data.html">Selecting Data</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../05_basic/054_examples.html">Examples</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Advanced SQL Commands</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../06_advanced/061_updating_data.html">Updating Data</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../06_advanced/062_deleting_data.html">Deleting Data</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../06_advanced/063_using_where_clause.html">Using WHERE Clause</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../06_advanced/064_sorting_results_with_order_by.html">Sorting Results with ORDER BY</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../06_advanced/065_examples.html">Examples</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Complex Queries</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../07_complex/071_aggregate_functions.html">Aggregate Functions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../07_complex/072_grouping_results_with_group_by.html">Grouping Results with GROUP BY</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../07_complex/073_filtering_groups_with_having.html">Filtering Groups with HAVING</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../07_complex/074_examples.html">Examples</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Joins</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../08_joins/081_understanding_joins.html">Understanding Joins</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../08_joins/082_inner_join.html">Inner Join</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../08_joins/083_left_join.html">Left Join</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../08_joins/084_right_join.html">Right Join</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../08_joins/085_full_join.html">Full Join</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../08_joins/086_examples.html">Examples</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">SQLite with Python</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="091_setting_up_sqlite_in_python.html">Setting Up SQLite in Python</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="092_performing_basic_operations.html">Performing Basic Operations</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="093_handling_transactions.html">Handling Transactions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="094_error_handling.html">Error Handling</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="095_examples.html">Examples</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">SQLite with Jupyter</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../10_jupyter/101_installing_libraries.html">Installing Necessary Libraries</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../10_jupyter/102_running_sqlite_queries_in_jupyter.html">Running SQLite Queries in Jupyter</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../10_jupyter/103_visualizing_data_with_sqlite_and_pandas.html">Visualizing Data with SQLite and Pandas</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Additional Resources and Further Reading</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../11_resources/111_official_documentation.html">Official Documentation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../11_resources/112_community_resources.html">Community Resources</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../11_resources/113_books_and_tutorials.html">Books and Tutorials</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Essential Guide to SQLite</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html" class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
+          <li>SQLite with Python &raquo;</li>
+      <li class="breadcrumb-item active">Performing Basic Operations</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/imarranz/essential-guide-to-sqlite/edit/master/docs/09_python/092_performing_basic_operations.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+    <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Breadcrumb Navigation">
+        <a href="091_setting_up_sqlite_in_python.html" class="btn btn-neutral float-left" title="Setting Up SQLite in Python"><span class="icon icon-circle-arrow-left" aria-hidden="true"></span> Previous</a>
+        <a href="093_handling_transactions.html" class="btn btn-neutral float-right" title="Handling Transactions">Next <span class="icon icon-circle-arrow-right" aria-hidden="true"></span></a>
+    </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <div class="toc">
+<ul>
+<li><a href="#sqlite_with_python">SQLite with Python</a><ul>
+<li><a href="#performing_basic_operations">Performing Basic Operations</a><ul>
+<li><a href="#creating_a_table">Creating a Table</a></li>
+<li><a href="#inserting_data_into_a_table">Inserting Data into a Table</a></li>
+<li><a href="#querying_data_from_a_table">Querying Data from a Table</a></li>
+<li><a href="#updating_data_in_a_table">Updating Data in a Table</a></li>
+<li><a href="#deleting_data_from_a_table">Deleting Data from a Table</a></li>
+<li><a href="#handling_errors">Handling Errors</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<hr />
+<h2 id="sqlite_with_python">SQLite with Python<a class="headerlink" href="#sqlite_with_python" title="Permanent link">#</a></h2>
+<h3 id="performing_basic_operations">Performing Basic Operations<a class="headerlink" href="#performing_basic_operations" title="Permanent link">#</a></h3>
+<p>Once you have set up SQLite in Python, you can perform various basic operations to interact with your database. This section will guide you through the fundamental operations such as creating tables, inserting data, querying data, updating records, and deleting records using Python's <code>sqlite3</code> module.</p>
+<h4 id="creating_a_table">Creating a Table<a class="headerlink" href="#creating_a_table" title="Permanent link">#</a></h4>
+<p>Creating a table in SQLite involves defining the table's schema, which includes the table name and the columns with their data types.</p>
+<p><strong>Example</strong>:</p>
+<pre><code class="language-python">import sqlite3
+
+# Connect to an SQLite database (or create it if it doesn't exist)
+conn = sqlite3.connect('example.db')
+
+# Create a cursor object
+cursor = conn.cursor()
+
+# Create a table named 'customers'
+cursor.execute('''
+CREATE TABLE IF NOT EXISTS customers (
+    CustomerID INTEGER PRIMARY KEY,
+    CustomerName TEXT NOT NULL,
+    ContactName TEXT,
+    Country TEXT
+)
+''')
+
+# Commit the changes
+conn.commit()
+
+# Close the cursor and connection
+cursor.close()
+conn.close()
+</code></pre>
+<p>In this example, we connect to an SQLite database named <code>example.db</code>, create a cursor object, and execute a <code>CREATE TABLE</code> statement to create a table named <code>customers</code> with four columns: <code>CustomerID</code>, <code>CustomerName</code>, <code>ContactName</code>, and <code>Country</code>.</p>
+<h4 id="inserting_data_into_a_table">Inserting Data into a Table<a class="headerlink" href="#inserting_data_into_a_table" title="Permanent link">#</a></h4>
+<p>Inserting data into a table involves using the <code>INSERT INTO</code> SQL command.</p>
+<p><strong>Example</strong>:</p>
+<pre><code class="language-python">import sqlite3
+
+# Connect to the SQLite database
+conn = sqlite3.connect('example.db')
+
+# Create a cursor object
+cursor = conn.cursor()
+
+# Insert data into the 'customers' table
+cursor.execute('''
+INSERT INTO customers (CustomerName, ContactName, Country)
+VALUES ('Alfreds Futterkiste', 'Maria Anders', 'Germany')
+''')
+
+# Commit the changes
+conn.commit()
+
+# Close the cursor and connection
+cursor.close()
+conn.close()
+</code></pre>
+<p>In this example, we insert a new record into the <code>customers</code> table with the <code>CustomerName</code> 'Alfreds Futterkiste', <code>ContactName</code> 'Maria Anders', and <code>Country</code> 'Germany'.</p>
+<h4 id="querying_data_from_a_table">Querying Data from a Table<a class="headerlink" href="#querying_data_from_a_table" title="Permanent link">#</a></h4>
+<p>Querying data from a table involves using the <code>SELECT</code> SQL command to retrieve records that match specific criteria.</p>
+<p><strong>Example</strong>:</p>
+<pre><code class="language-python">import sqlite3
+
+# Connect to the SQLite database
+conn = sqlite3.connect('example.db')
+
+# Create a cursor object
+cursor = conn.cursor()
+
+# Query data from the 'customers' table
+cursor.execute('SELECT * FROM customers')
+
+# Fetch all rows from the executed query
+rows = cursor.fetchall()
+
+# Print the fetched rows
+for row in rows:
+    print(row)
+
+# Close the cursor and connection
+cursor.close()
+conn.close()
+</code></pre>
+<p>In this example, we retrieve all records from the <code>customers</code> table and print the results.</p>
+<h4 id="updating_data_in_a_table">Updating Data in a Table<a class="headerlink" href="#updating_data_in_a_table" title="Permanent link">#</a></h4>
+<p>Updating data in a table involves using the <code>UPDATE</code> SQL command to modify existing records.</p>
+<p><strong>Example</strong>:</p>
+<pre><code class="language-python">import sqlite3
+
+# Connect to the SQLite database
+conn = sqlite3.connect('example.db')
+
+# Create a cursor object
+cursor = conn.cursor()
+
+# Update data in the 'customers' table
+cursor.execute('''
+UPDATE customers
+SET ContactName = 'Alfred Schmidt'
+WHERE CustomerName = 'Alfreds Futterkiste'
+''')
+
+# Commit the changes
+conn.commit()
+
+# Close the cursor and connection
+cursor.close()
+conn.close()
+</code></pre>
+<p>In this example, we update the <code>ContactName</code> for the record where the <code>CustomerName</code> is 'Alfreds Futterkiste' to 'Alfred Schmidt'.</p>
+<h4 id="deleting_data_from_a_table">Deleting Data from a Table<a class="headerlink" href="#deleting_data_from_a_table" title="Permanent link">#</a></h4>
+<p>Deleting data from a table involves using the <code>DELETE FROM</code> SQL command to remove records that match specific criteria.</p>
+<p><strong>Example</strong>:</p>
+<pre><code class="language-python">import sqlite3
+
+# Connect to the SQLite database
+conn = sqlite3.connect('example.db')
+
+# Create a cursor object
+cursor = conn.cursor()
+
+# Delete data from the 'customers' table
+cursor.execute('''
+DELETE FROM customers
+WHERE CustomerName = 'Alfreds Futterkiste'
+''')
+
+# Commit the changes
+conn.commit()
+
+# Close the cursor and connection
+cursor.close()
+conn.close()
+</code></pre>
+<p>In this example, we delete the record where the <code>CustomerName</code> is 'Alfreds Futterkiste'.</p>
+<h4 id="handling_errors">Handling Errors<a class="headerlink" href="#handling_errors" title="Permanent link">#</a></h4>
+<p>When working with databases, it's important to handle potential errors that may arise during database operations. The <code>sqlite3</code> module provides exception classes that you can use to catch and handle these errors.</p>
+<p><strong>Example</strong>:</p>
+<pre><code class="language-python">import sqlite3
+
+try:
+    # Connect to the SQLite database
+    conn = sqlite3.connect('example.db')
+
+    # Create a cursor object
+    cursor = conn.cursor()
+
+    # Attempt to insert a record with a duplicate primary key
+    cursor.execute('''
+    INSERT INTO customers (CustomerID, CustomerName, ContactName, Country)
+    VALUES (1, 'Duplicate Customer', 'John Doe', 'USA')
+    ''')
+
+    # Commit the changes
+    conn.commit()
+
+except sqlite3.IntegrityError as e:
+    print('IntegrityError occurred:', e)
+
+except sqlite3.Error as e:
+    print('SQLite error occurred:', e)
+
+finally:
+    # Close the cursor and connection
+    cursor.close()
+    conn.close()
+</code></pre>
+<p>In this example, we attempt to insert a record with a duplicate primary key. The <code>sqlite3.IntegrityError</code> exception is caught and handled, printing an error message to the console.</p>
+<p>By mastering these basic operations, you can effectively interact with your SQLite database using Python, allowing you to build robust data-driven applications and streamline your data science workflows.</p>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+      <p><b>Essential Guide to SQLite</b> <br>Copyright &#169; 2024 <a href="https://github.com/imarranz">Ibon Martínez-Arranz</a><br></p>
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/imarranz/essential-guide-to-sqlite" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="091_setting_up_sqlite_in_python.html" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="093_handling_transactions.html" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

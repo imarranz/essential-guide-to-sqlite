@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Ibon Martínez-Arranz" /><link rel="canonical" href="https://github.com/imarranz/essential-guide-to-sqlite/09_python/093_handling_transactions.html" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Handling Transactions - Essential Guide to SQLite</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../css/custom.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Handling Transactions";
+        var mkdocs_page_input_path = "09_python/093_handling_transactions.md";
+        var mkdocs_page_url = "/imarranz/essential-guide-to-sqlite/09_python/093_handling_transactions.html";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/yaml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/python.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/bash.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../index.html" class="icon icon-home"> Essential Guide to SQLite
+        </a>
+        <div class="version">
+          1.0
+        </div><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../index.html">Essential Guide to SQLite</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Introduction to SQLite</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../01_introduction/011_overview_of_sqlite.html">Overview of SQLite</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../01_introduction/012_key_features.html">Key Features</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../01_introduction/013_use_cases.html">Use Cases</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Installing SQLite</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../02_installing/021_installation_on_linux.html">Installation on Linux</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../02_installing/022_first_steps.html">First Steps</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Using SQLite in Command Line</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../03_command/031_launching_sqlite_console.html">Launching SQLite Console</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../03_command/032_basic_commands.html">Basic Commands</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Introduction to the Northwind Database</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../04_northwind/041_overview_of_the_northwind_database.html">Overview of the Northwind Database</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../04_northwind/042_schema_and_relationships.html">Schema and Relationships</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Basic SQL Commands</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../05_basic/051_creating_tables.html">Creating Tables</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../05_basic/052_inserting_data.html">Inserting Data</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../05_basic/053_selecting_data.html">Selecting Data</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../05_basic/054_examples.html">Examples</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Advanced SQL Commands</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../06_advanced/061_updating_data.html">Updating Data</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../06_advanced/062_deleting_data.html">Deleting Data</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../06_advanced/063_using_where_clause.html">Using WHERE Clause</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../06_advanced/064_sorting_results_with_order_by.html">Sorting Results with ORDER BY</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../06_advanced/065_examples.html">Examples</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Complex Queries</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../07_complex/071_aggregate_functions.html">Aggregate Functions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../07_complex/072_grouping_results_with_group_by.html">Grouping Results with GROUP BY</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../07_complex/073_filtering_groups_with_having.html">Filtering Groups with HAVING</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../07_complex/074_examples.html">Examples</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Joins</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../08_joins/081_understanding_joins.html">Understanding Joins</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../08_joins/082_inner_join.html">Inner Join</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../08_joins/083_left_join.html">Left Join</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../08_joins/084_right_join.html">Right Join</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../08_joins/085_full_join.html">Full Join</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../08_joins/086_examples.html">Examples</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">SQLite with Python</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="091_setting_up_sqlite_in_python.html">Setting Up SQLite in Python</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="092_performing_basic_operations.html">Performing Basic Operations</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="093_handling_transactions.html">Handling Transactions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="094_error_handling.html">Error Handling</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="095_examples.html">Examples</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">SQLite with Jupyter</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../10_jupyter/101_installing_libraries.html">Installing Necessary Libraries</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../10_jupyter/102_running_sqlite_queries_in_jupyter.html">Running SQLite Queries in Jupyter</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../10_jupyter/103_visualizing_data_with_sqlite_and_pandas.html">Visualizing Data with SQLite and Pandas</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Additional Resources and Further Reading</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../11_resources/111_official_documentation.html">Official Documentation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../11_resources/112_community_resources.html">Community Resources</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../11_resources/113_books_and_tutorials.html">Books and Tutorials</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Essential Guide to SQLite</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html" class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
+          <li>SQLite with Python &raquo;</li>
+      <li class="breadcrumb-item active">Handling Transactions</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/imarranz/essential-guide-to-sqlite/edit/master/docs/09_python/093_handling_transactions.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+    <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Breadcrumb Navigation">
+        <a href="092_performing_basic_operations.html" class="btn btn-neutral float-left" title="Performing Basic Operations"><span class="icon icon-circle-arrow-left" aria-hidden="true"></span> Previous</a>
+        <a href="094_error_handling.html" class="btn btn-neutral float-right" title="Error Handling">Next <span class="icon icon-circle-arrow-right" aria-hidden="true"></span></a>
+    </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <div class="toc">
+<ul>
+<li><a href="#sqlite_with_python">SQLite with Python</a><ul>
+<li><a href="#handling_transactions">Handling Transactions</a><ul>
+<li><a href="#understanding_transactions">Understanding Transactions</a></li>
+<li><a href="#starting_a_transaction">Starting a Transaction</a></li>
+<li><a href="#committing_a_transaction">Committing a Transaction</a></li>
+<li><a href="#rolling_back_a_transaction">Rolling Back a Transaction</a></li>
+<li><a href="#using_context_managers_for_transactions">Using Context Managers for Transactions</a></li>
+<li><a href="#savepoints">Savepoints</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<hr />
+<h2 id="sqlite_with_python">SQLite with Python<a class="headerlink" href="#sqlite_with_python" title="Permanent link">#</a></h2>
+<h3 id="handling_transactions">Handling Transactions<a class="headerlink" href="#handling_transactions" title="Permanent link">#</a></h3>
+<p>Transactions are a critical aspect of database management, ensuring data integrity and consistency. In SQLite, a transaction is a sequence of operations performed as a single logical unit of work. Transactions ensure that either all operations are completed successfully, or none of them are applied, maintaining the database's consistency. This section will guide you through the process of handling transactions in SQLite using Python's <code>sqlite3</code> module.</p>
+<h4 id="understanding_transactions">Understanding Transactions<a class="headerlink" href="#understanding_transactions" title="Permanent link">#</a></h4>
+<p>A transaction has four key properties, commonly known as ACID properties:
+- <strong>Atomicity</strong>: Ensures that all operations within a transaction are completed; if one operation fails, the entire transaction fails.
+- <strong>Consistency</strong>: Ensures that the database remains in a consistent state before and after the transaction.
+- <strong>Isolation</strong>: Ensures that the execution of one transaction is isolated from other transactions.
+- <strong>Durability</strong>: Ensures that once a transaction is committed, the changes are permanent, even in the event of a system failure.</p>
+<h4 id="starting_a_transaction">Starting a Transaction<a class="headerlink" href="#starting_a_transaction" title="Permanent link">#</a></h4>
+<p>In SQLite, a transaction begins implicitly with the first SQL statement that modifies data (INSERT, UPDATE, DELETE). However, you can also start a transaction explicitly using the <code>BEGIN</code> statement.</p>
+<p><strong>Example</strong>:</p>
+<pre><code class="language-python">import sqlite3
+
+# Connect to the SQLite database
+conn = sqlite3.connect('example.db')
+
+# Create a cursor object
+cursor = conn.cursor()
+
+# Begin a transaction
+cursor.execute('BEGIN')
+</code></pre>
+<p>In this example, we explicitly start a transaction using the <code>BEGIN</code> statement.</p>
+<h4 id="committing_a_transaction">Committing a Transaction<a class="headerlink" href="#committing_a_transaction" title="Permanent link">#</a></h4>
+<p>Committing a transaction means making all changes made during the transaction permanent. This is done using the <code>COMMIT</code> statement.</p>
+<p><strong>Example</strong>:</p>
+<pre><code class="language-python">import sqlite3
+
+try:
+    # Connect to the SQLite database
+    conn = sqlite3.connect('example.db')
+
+    # Create a cursor object
+    cursor = conn.cursor()
+
+    # Begin a transaction
+    cursor.execute('BEGIN')
+
+    # Insert data into the 'customers' table
+    cursor.execute('''
+    INSERT INTO customers (CustomerName, ContactName, Country)
+    VALUES ('New Customer', 'Jane Doe', 'USA')
+    ''')
+
+    # Commit the transaction
+    conn.commit()
+
+except sqlite3.Error as e:
+    print('SQLite error occurred:', e)
+
+finally:
+    # Close the cursor and connection
+    cursor.close()
+    conn.close()
+</code></pre>
+<p>In this example, we begin a transaction, insert a new record into the <code>customers</code> table, and commit the transaction using <code>conn.commit()</code>, making the changes permanent.</p>
+<h4 id="rolling_back_a_transaction">Rolling Back a Transaction<a class="headerlink" href="#rolling_back_a_transaction" title="Permanent link">#</a></h4>
+<p>Rolling back a transaction means undoing all changes made during the transaction. This is done using the <code>ROLLBACK</code> statement. Rolling back is useful when an error occurs, and you need to revert the database to its previous state.</p>
+<p><strong>Example</strong>:</p>
+<pre><code class="language-python">import sqlite3
+
+try:
+    # Connect to the SQLite database
+    conn = sqlite3.connect('example.db')
+
+    # Create a cursor object
+    cursor = conn.cursor()
+
+    # Begin a transaction
+    cursor.execute('BEGIN')
+
+    # Insert data into the 'customers' table
+    cursor.execute('''
+    INSERT INTO customers (CustomerName, ContactName, Country)
+    VALUES ('New Customer', 'Jane Doe', 'USA')
+    ''')
+
+    # Simulate an error
+    raise Exception('Simulated error')
+
+    # Commit the transaction
+    conn.commit()
+
+except Exception as e:
+    print('Error occurred:', e)
+    # Rollback the transaction
+    conn.rollback()
+
+finally:
+    # Close the cursor and connection
+    cursor.close()
+    conn.close()
+</code></pre>
+<p>In this example, we begin a transaction, insert a new record, and then simulate an error. The <code>conn.rollback()</code> statement reverts the database to its state before the transaction began.</p>
+<h4 id="using_context_managers_for_transactions">Using Context Managers for Transactions<a class="headerlink" href="#using_context_managers_for_transactions" title="Permanent link">#</a></h4>
+<p>Python's <code>sqlite3</code> module supports using context managers (<code>with</code> statements) to handle transactions. This approach simplifies transaction management by automatically committing or rolling back transactions.</p>
+<p><strong>Example</strong>:</p>
+<pre><code class="language-python">import sqlite3
+
+# Connect to the SQLite database
+conn = sqlite3.connect('example.db')
+
+try:
+    with conn:
+        # Create a cursor object
+        cursor = conn.cursor()
+
+        # Insert data into the 'customers' table
+        cursor.execute('''
+        INSERT INTO customers (CustomerName, ContactName, Country)
+        VALUES ('New Customer', 'Jane Doe', 'USA')
+        ''')
+
+except sqlite3.Error as e:
+    print('SQLite error occurred:', e)
+
+finally:
+    # Close the connection
+    conn.close()
+</code></pre>
+<p>In this example, using <code>with conn:</code> ensures that if an error occurs within the block, the transaction is automatically rolled back. If no error occurs, the transaction is committed when the block is exited.</p>
+<h4 id="savepoints">Savepoints<a class="headerlink" href="#savepoints" title="Permanent link">#</a></h4>
+<p>Savepoints allow you to set intermediate points within a transaction that you can roll back to without affecting the entire transaction. This is useful for complex transactions where you want to maintain finer control over what gets rolled back.</p>
+<p><strong>Example</strong>:</p>
+<pre><code class="language-python">import sqlite3
+
+try:
+    # Connect to the SQLite database
+    conn = sqlite3.connect('example.db')
+
+    # Create a cursor object
+    cursor = conn.cursor()
+
+    # Begin a transaction
+    cursor.execute('BEGIN')
+
+    # Insert data into the 'customers' table
+    cursor.execute('''
+    INSERT INTO customers (CustomerName, ContactName, Country)
+    VALUES ('Customer One', 'John Doe', 'USA')
+    ''')
+
+    # Set a savepoint
+    cursor.execute('SAVEPOINT sp1')
+
+    # Insert another record
+    cursor.execute('''
+    INSERT INTO customers (CustomerName, ContactName, Country)
+    VALUES ('Customer Two', 'Alice Smith', 'UK')
+    ''')
+
+    # Rollback to the savepoint
+    cursor.execute('ROLLBACK TO sp1')
+
+    # Commit the transaction
+    conn.commit()
+
+except sqlite3.Error as e:
+    print('SQLite error occurred:', e)
+
+finally:
+    # Close the cursor and connection
+    cursor.close()
+    conn.close()
+</code></pre>
+<p>In this example, we begin a transaction, insert a record, set a savepoint, insert another record, and then roll back to the savepoint. This action undoes the second insert while retaining the first insert.</p>
+<p>By mastering transaction handling in SQLite using Python, you can ensure the integrity and consistency of your database operations, making your applications more robust and reliable.</p>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+      <p><b>Essential Guide to SQLite</b> <br>Copyright &#169; 2024 <a href="https://github.com/imarranz">Ibon Martínez-Arranz</a><br></p>
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/imarranz/essential-guide-to-sqlite" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="092_performing_basic_operations.html" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="094_error_handling.html" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

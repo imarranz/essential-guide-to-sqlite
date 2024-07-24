@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Ibon Martínez-Arranz" /><link rel="canonical" href="https://github.com/imarranz/essential-guide-to-sqlite/02_installing/022_first_steps.html" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>First Steps - Essential Guide to SQLite</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../css/custom.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "First Steps";
+        var mkdocs_page_input_path = "02_installing/022_first_steps.md";
+        var mkdocs_page_url = "/imarranz/essential-guide-to-sqlite/02_installing/022_first_steps.html";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/yaml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/python.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/bash.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../index.html" class="icon icon-home"> Essential Guide to SQLite
+        </a>
+        <div class="version">
+          1.0
+        </div><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../index.html">Essential Guide to SQLite</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Introduction to SQLite</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../01_introduction/011_overview_of_sqlite.html">Overview of SQLite</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../01_introduction/012_key_features.html">Key Features</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../01_introduction/013_use_cases.html">Use Cases</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Installing SQLite</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="021_installation_on_linux.html">Installation on Linux</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="022_first_steps.html">First Steps</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Using SQLite in Command Line</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../03_command/031_launching_sqlite_console.html">Launching SQLite Console</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../03_command/032_basic_commands.html">Basic Commands</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Introduction to the Northwind Database</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../04_northwind/041_overview_of_the_northwind_database.html">Overview of the Northwind Database</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../04_northwind/042_schema_and_relationships.html">Schema and Relationships</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Basic SQL Commands</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../05_basic/051_creating_tables.html">Creating Tables</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../05_basic/052_inserting_data.html">Inserting Data</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../05_basic/053_selecting_data.html">Selecting Data</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../05_basic/054_examples.html">Examples</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Advanced SQL Commands</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../06_advanced/061_updating_data.html">Updating Data</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../06_advanced/062_deleting_data.html">Deleting Data</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../06_advanced/063_using_where_clause.html">Using WHERE Clause</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../06_advanced/064_sorting_results_with_order_by.html">Sorting Results with ORDER BY</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../06_advanced/065_examples.html">Examples</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Complex Queries</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../07_complex/071_aggregate_functions.html">Aggregate Functions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../07_complex/072_grouping_results_with_group_by.html">Grouping Results with GROUP BY</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../07_complex/073_filtering_groups_with_having.html">Filtering Groups with HAVING</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../07_complex/074_examples.html">Examples</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Joins</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../08_joins/081_understanding_joins.html">Understanding Joins</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../08_joins/082_inner_join.html">Inner Join</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../08_joins/083_left_join.html">Left Join</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../08_joins/084_right_join.html">Right Join</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../08_joins/085_full_join.html">Full Join</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../08_joins/086_examples.html">Examples</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">SQLite with Python</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../09_python/091_setting_up_sqlite_in_python.html">Setting Up SQLite in Python</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../09_python/092_performing_basic_operations.html">Performing Basic Operations</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../09_python/093_handling_transactions.html">Handling Transactions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../09_python/094_error_handling.html">Error Handling</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../09_python/095_examples.html">Examples</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">SQLite with Jupyter</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../10_jupyter/101_installing_libraries.html">Installing Necessary Libraries</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../10_jupyter/102_running_sqlite_queries_in_jupyter.html">Running SQLite Queries in Jupyter</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../10_jupyter/103_visualizing_data_with_sqlite_and_pandas.html">Visualizing Data with SQLite and Pandas</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Additional Resources and Further Reading</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../11_resources/111_official_documentation.html">Official Documentation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../11_resources/112_community_resources.html">Community Resources</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../11_resources/113_books_and_tutorials.html">Books and Tutorials</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Essential Guide to SQLite</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html" class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
+          <li>Installing SQLite &raquo;</li>
+      <li class="breadcrumb-item active">First Steps</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/imarranz/essential-guide-to-sqlite/edit/master/docs/02_installing/022_first_steps.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+    <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Breadcrumb Navigation">
+        <a href="021_installation_on_linux.html" class="btn btn-neutral float-left" title="Installation on Linux"><span class="icon icon-circle-arrow-left" aria-hidden="true"></span> Previous</a>
+        <a href="../03_command/031_launching_sqlite_console.html" class="btn btn-neutral float-right" title="Launching SQLite Console">Next <span class="icon icon-circle-arrow-right" aria-hidden="true"></span></a>
+    </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <div class="toc">
+<ul>
+<li><a href="#installing_sqlite">Installing SQLite</a><ul>
+<li><a href="#first_steps">First Steps</a><ul>
+<li><a href="#creating_a_new_database">Creating a New Database</a></li>
+<li><a href="#opening_the_sqlite_shell">Opening the SQLite Shell</a></li>
+<li><a href="#running_basic_sql_commands">Running Basic SQL Commands</a></li>
+<li><a href="#exiting_the_sqlite_shell">Exiting the SQLite Shell</a></li>
+<li><a href="#using_sqlite_commands">Using SQLite Commands</a></li>
+<li><a href="#example_workflow">Example Workflow</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<hr />
+<h2 id="installing_sqlite">Installing SQLite<a class="headerlink" href="#installing_sqlite" title="Permanent link">#</a></h2>
+<h3 id="first_steps">First Steps<a class="headerlink" href="#first_steps" title="Permanent link">#</a></h3>
+<p>Once you have successfully installed SQLite on your system, it's time to get started with some basic operations. This section will guide you through the initial steps of using SQLite, including creating a database, running basic commands, and understanding the SQLite shell.</p>
+<h4 id="creating_a_new_database">Creating a New Database<a class="headerlink" href="#creating_a_new_database" title="Permanent link">#</a></h4>
+<p>Creating a new SQLite database is straightforward. You simply run the <code>sqlite3</code> command followed by the desired name of your database file. If the file does not exist, SQLite will create it for you.</p>
+<pre><code class="language-bash">sqlite3 mydatabase.db
+</code></pre>
+<p>This command opens the SQLite shell and creates a new database file named <code>mydatabase.db</code> in the current directory. If <code>mydatabase.db</code> already exists, the command will open the existing database.</p>
+<h4 id="opening_the_sqlite_shell">Opening the SQLite Shell<a class="headerlink" href="#opening_the_sqlite_shell" title="Permanent link">#</a></h4>
+<p>The SQLite shell is an interactive command-line interface that allows you to execute SQL commands directly on your database. To open the shell without specifying a database, simply run:</p>
+<pre><code class="language-bash">sqlite3
+</code></pre>
+<p>In the shell, you can create a new database or open an existing one using the <code>.open</code> command:</p>
+<pre><code class="language-sql">.open mydatabase.db
+</code></pre>
+<h4 id="running_basic_sql_commands">Running Basic SQL Commands<a class="headerlink" href="#running_basic_sql_commands" title="Permanent link">#</a></h4>
+<p>Once inside the SQLite shell, you can start executing SQL commands. Here are a few basic commands to get you started:</p>
+<ul>
+<li><strong>Creating a Table</strong>: Use the <code>CREATE TABLE</code> command to define a new table. For example, to create a table named <code>users</code>:</li>
+</ul>
+<pre><code class="language-sql">CREATE TABLE users (
+    id INTEGER PRIMARY KEY,
+    name TEXT NOT NULL,
+    email TEXT UNIQUE NOT NULL
+);
+</code></pre>
+<ul>
+<li><strong>Inserting Data</strong>: Use the <code>INSERT INTO</code> command to add records to your table. For example, to insert a new user into the <code>users</code> table:</li>
+</ul>
+<pre><code class="language-sql">INSERT INTO users (name, email) VALUES ('John Doe', 'john.doe@example.com');
+</code></pre>
+<ul>
+<li><strong>Querying Data</strong>: Use the <code>SELECT</code> command to retrieve data from your table. For example, to select all records from the <code>users</code> table:</li>
+</ul>
+<pre><code class="language-sql">SELECT * FROM users;
+</code></pre>
+<ul>
+<li><strong>Updating Data</strong>: Use the <code>UPDATE</code> command to modify existing records. For example, to update the email address of the user with <code>id</code> 1:</li>
+</ul>
+<pre><code class="language-sql">UPDATE users SET email = 'john.newemail@example.com' WHERE id = 1;
+</code></pre>
+<ul>
+<li><strong>Deleting Data</strong>: Use the <code>DELETE</code> command to remove records from your table. For example, to delete the user with <code>id</code> 1:</li>
+</ul>
+<pre><code class="language-sql">DELETE FROM users WHERE id = 1;
+</code></pre>
+<h4 id="exiting_the_sqlite_shell">Exiting the SQLite Shell<a class="headerlink" href="#exiting_the_sqlite_shell" title="Permanent link">#</a></h4>
+<p>To exit the SQLite shell, you can use the <code>.exit</code> or <code>.quit</code> command:</p>
+<pre><code class="language-sql">.exit
+</code></pre>
+<p>Alternatively, you can simply press <code>Ctrl+D</code>.</p>
+<h4 id="using_sqlite_commands">Using SQLite Commands<a class="headerlink" href="#using_sqlite_commands" title="Permanent link">#</a></h4>
+<p>SQLite provides a set of special commands (dot commands) that are not SQL commands but are used to control the behavior of the SQLite shell. Some useful dot commands include:</p>
+<ul>
+<li><strong><code>.tables</code></strong>: List all tables in the current database.</li>
+</ul>
+<pre><code class="language-sql">.tables
+</code></pre>
+<ul>
+<li><strong><code>.schema [table_name]</code></strong>: Show the SQL schema of a specific table or all tables if no table name is provided.</li>
+</ul>
+<pre><code class="language-sql">.schema users
+</code></pre>
+<ul>
+<li><strong><code>.databases</code></strong>: List all databases opened in the current connection.</li>
+</ul>
+<pre><code class="language-sql">.databases
+</code></pre>
+<ul>
+<li><strong><code>.mode [mode]</code></strong>: Change the output mode (e.g., column, csv, list, html).</li>
+</ul>
+<pre><code class="language-sql">.mode column
+</code></pre>
+<ul>
+<li><strong><code>.headers [on|off]</code></strong>: Turn on or off the display of column headers.</li>
+</ul>
+<pre><code class="language-sql">.headers on
+</code></pre>
+<ul>
+<li><strong><code>.help</code></strong>: Display a list of all dot commands and their descriptions.</li>
+</ul>
+<pre><code class="language-sql">.help
+</code></pre>
+<h4 id="example_workflow">Example Workflow<a class="headerlink" href="#example_workflow" title="Permanent link">#</a></h4>
+<p>To illustrate a typical workflow in SQLite, let's go through a simple example:</p>
+<ol>
+<li><strong>Create a Database</strong>:</li>
+</ol>
+<pre><code class="language-bash">sqlite3 example.db
+</code></pre>
+<ol>
+<li><strong>Create a Table</strong>:</li>
+</ol>
+<pre><code class="language-sql">CREATE TABLE products (
+    id INTEGER PRIMARY KEY,
+    name TEXT NOT NULL,
+    price REAL NOT NULL
+);
+</code></pre>
+<ol>
+<li><strong>Insert Data</strong>:</li>
+</ol>
+<pre><code class="language-sql">INSERT INTO products (name, price) VALUES ('Laptop', 999.99);
+INSERT INTO products (name, price) VALUES ('Smartphone', 499.99);
+</code></pre>
+<ol>
+<li><strong>Query Data</strong>:</li>
+</ol>
+<pre><code class="language-sql">SELECT * FROM products;
+</code></pre>
+<ol>
+<li><strong>Update Data</strong>:</li>
+</ol>
+<pre><code class="language-sql">UPDATE products SET price = 899.99 WHERE name = 'Laptop';
+</code></pre>
+<ol>
+<li><strong>Delete Data</strong>:</li>
+</ol>
+<pre><code class="language-sql">DELETE FROM products WHERE name = 'Smartphone';
+</code></pre>
+<ol>
+<li><strong>Exit the Shell</strong>:</li>
+</ol>
+<pre><code class="language-sql">.exit
+</code></pre>
+<p>By following these steps, you can quickly get up and running with SQLite, creating databases, running SQL commands, and managing your data efficiently. Whether you're using SQLite for small projects, learning SQL, or integrating it into larger applications, these first steps will provide a solid foundation.</p>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+      <p><b>Essential Guide to SQLite</b> <br>Copyright &#169; 2024 <a href="https://github.com/imarranz">Ibon Martínez-Arranz</a><br></p>
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/imarranz/essential-guide-to-sqlite" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="021_installation_on_linux.html" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../03_command/031_launching_sqlite_console.html" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

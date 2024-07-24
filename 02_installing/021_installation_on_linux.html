@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Ibon Martínez-Arranz" /><link rel="canonical" href="https://github.com/imarranz/essential-guide-to-sqlite/02_installing/021_installation_on_linux.html" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Installation on Linux - Essential Guide to SQLite</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../css/custom.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Installation on Linux";
+        var mkdocs_page_input_path = "02_installing/021_installation_on_linux.md";
+        var mkdocs_page_url = "/imarranz/essential-guide-to-sqlite/02_installing/021_installation_on_linux.html";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/yaml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/python.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/bash.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../index.html" class="icon icon-home"> Essential Guide to SQLite
+        </a>
+        <div class="version">
+          1.0
+        </div><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../index.html">Essential Guide to SQLite</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Introduction to SQLite</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../01_introduction/011_overview_of_sqlite.html">Overview of SQLite</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../01_introduction/012_key_features.html">Key Features</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../01_introduction/013_use_cases.html">Use Cases</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Installing SQLite</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" href="021_installation_on_linux.html">Installation on Linux</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="022_first_steps.html">First Steps</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Using SQLite in Command Line</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../03_command/031_launching_sqlite_console.html">Launching SQLite Console</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../03_command/032_basic_commands.html">Basic Commands</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Introduction to the Northwind Database</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../04_northwind/041_overview_of_the_northwind_database.html">Overview of the Northwind Database</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../04_northwind/042_schema_and_relationships.html">Schema and Relationships</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Basic SQL Commands</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../05_basic/051_creating_tables.html">Creating Tables</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../05_basic/052_inserting_data.html">Inserting Data</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../05_basic/053_selecting_data.html">Selecting Data</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../05_basic/054_examples.html">Examples</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Advanced SQL Commands</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../06_advanced/061_updating_data.html">Updating Data</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../06_advanced/062_deleting_data.html">Deleting Data</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../06_advanced/063_using_where_clause.html">Using WHERE Clause</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../06_advanced/064_sorting_results_with_order_by.html">Sorting Results with ORDER BY</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../06_advanced/065_examples.html">Examples</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Complex Queries</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../07_complex/071_aggregate_functions.html">Aggregate Functions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../07_complex/072_grouping_results_with_group_by.html">Grouping Results with GROUP BY</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../07_complex/073_filtering_groups_with_having.html">Filtering Groups with HAVING</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../07_complex/074_examples.html">Examples</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Joins</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../08_joins/081_understanding_joins.html">Understanding Joins</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../08_joins/082_inner_join.html">Inner Join</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../08_joins/083_left_join.html">Left Join</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../08_joins/084_right_join.html">Right Join</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../08_joins/085_full_join.html">Full Join</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../08_joins/086_examples.html">Examples</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">SQLite with Python</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../09_python/091_setting_up_sqlite_in_python.html">Setting Up SQLite in Python</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../09_python/092_performing_basic_operations.html">Performing Basic Operations</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../09_python/093_handling_transactions.html">Handling Transactions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../09_python/094_error_handling.html">Error Handling</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../09_python/095_examples.html">Examples</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">SQLite with Jupyter</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../10_jupyter/101_installing_libraries.html">Installing Necessary Libraries</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../10_jupyter/102_running_sqlite_queries_in_jupyter.html">Running SQLite Queries in Jupyter</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../10_jupyter/103_visualizing_data_with_sqlite_and_pandas.html">Visualizing Data with SQLite and Pandas</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Additional Resources and Further Reading</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../11_resources/111_official_documentation.html">Official Documentation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../11_resources/112_community_resources.html">Community Resources</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../11_resources/113_books_and_tutorials.html">Books and Tutorials</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Essential Guide to SQLite</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html" class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
+          <li>Installing SQLite &raquo;</li>
+      <li class="breadcrumb-item active">Installation on Linux</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/imarranz/essential-guide-to-sqlite/edit/master/docs/02_installing/021_installation_on_linux.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+    <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Breadcrumb Navigation">
+        <a href="../01_introduction/013_use_cases.html" class="btn btn-neutral float-left" title="Use Cases"><span class="icon icon-circle-arrow-left" aria-hidden="true"></span> Previous</a>
+        <a href="022_first_steps.html" class="btn btn-neutral float-right" title="First Steps">Next <span class="icon icon-circle-arrow-right" aria-hidden="true"></span></a>
+    </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <div class="toc">
+<ul>
+<li><a href="#installing_sqlite">Installing SQLite</a><ul>
+<li><a href="#installation_on_linux">Installation on Linux</a><ul>
+<li><a href="#1_installation_on_ubuntudebian">1. Installation on Ubuntu/Debian</a></li>
+<li><a href="#2_installation_on_fedora">2. Installation on Fedora</a></li>
+<li><a href="#3_installation_on_centosrhel">3. Installation on CentOS/RHEL</a></li>
+<li><a href="#4_building_sqlite_from_source">4. Building SQLite from Source</a></li>
+</ul>
+</li>
+<li><a href="#post-installation_steps">Post-Installation Steps</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<hr />
+<h2 id="installing_sqlite">Installing SQLite<a class="headerlink" href="#installing_sqlite" title="Permanent link">#</a></h2>
+<h3 id="installation_on_linux">Installation on Linux<a class="headerlink" href="#installation_on_linux" title="Permanent link">#</a></h3>
+<p>Installing SQLite on a Linux system is straightforward and can be accomplished using various package managers depending on your distribution. Below are the steps for installing SQLite on some of the most popular Linux distributions:</p>
+<h4 id="1_installation_on_ubuntudebian">1. Installation on Ubuntu/Debian<a class="headerlink" href="#1_installation_on_ubuntudebian" title="Permanent link">#</a></h4>
+<p>For Ubuntu and Debian-based distributions, you can install SQLite using the <code>apt</code> package manager. Follow these steps:</p>
+<ol>
+<li>
+<p><strong>Update Package List</strong>:</p>
+<ul>
+<li>Before installing any new package, it's a good practice to update the package list to ensure you get the latest version available in the repositories.</li>
+</ul>
+</li>
+</ol>
+<pre><code class="language-bash">sudo apt update
+</code></pre>
+<ol>
+<li>
+<p><strong>Install SQLite</strong>:</p>
+<ul>
+<li>Use the following command to install SQLite.</li>
+</ul>
+</li>
+</ol>
+<pre><code class="language-bash">sudo apt install sqlite3
+</code></pre>
+<ol>
+<li>
+<p><strong>Verify Installation</strong>:</p>
+<ul>
+<li>Once the installation is complete, verify it by checking the SQLite version.</li>
+</ul>
+</li>
+</ol>
+<pre><code class="language-bash">sqlite3 --version
+</code></pre>
+<ol>
+<li>
+<p><strong>Install SQLite Development Libraries (Optional)</strong>:</p>
+<ul>
+<li>If you plan to develop applications that use SQLite, you might also want to install the SQLite development libraries.</li>
+</ul>
+</li>
+</ol>
+<pre><code class="language-bash">sudo apt install libsqlite3-dev
+</code></pre>
+<h4 id="2_installation_on_fedora">2. Installation on Fedora<a class="headerlink" href="#2_installation_on_fedora" title="Permanent link">#</a></h4>
+<p>For Fedora users, the <code>dnf</code> package manager can be used to install SQLite. Follow these steps:</p>
+<ol>
+<li>
+<p><strong>Update Package List</strong>:</p>
+<ul>
+<li>Update your system's package list to ensure you get the latest version of packages.</li>
+</ul>
+</li>
+</ol>
+<pre><code class="language-bash">sudo dnf check-update
+</code></pre>
+<ol>
+<li>
+<p><strong>Install SQLite</strong>:</p>
+<ul>
+<li>Use the following command to install SQLite.</li>
+</ul>
+</li>
+</ol>
+<pre><code class="language-bash">sudo dnf install sqlite
+</code></pre>
+<ol>
+<li>
+<p><strong>Verify Installation</strong>:</p>
+<ul>
+<li>After the installation, check the SQLite version to verify it.</li>
+</ul>
+</li>
+</ol>
+<pre><code class="language-bash">sqlite3 --version
+</code></pre>
+<ol>
+<li>
+<p><strong>Install SQLite Development Libraries (Optional)</strong>:</p>
+<ul>
+<li>To develop applications using SQLite, install the development libraries.</li>
+</ul>
+</li>
+</ol>
+<pre><code class="language-bash">sudo dnf install sqlite-devel
+</code></pre>
+<h4 id="3_installation_on_centosrhel">3. Installation on CentOS/RHEL<a class="headerlink" href="#3_installation_on_centosrhel" title="Permanent link">#</a></h4>
+<p>For CentOS and RHEL distributions, the <code>yum</code> package manager is used. Here are the steps:</p>
+<ol>
+<li>
+<p><strong>Update Package List</strong>:</p>
+<ul>
+<li>Update the package list to get the latest version of available packages.</li>
+</ul>
+</li>
+</ol>
+<pre><code class="language-bash">sudo yum check-update
+</code></pre>
+<ol>
+<li>
+<p><strong>Install SQLite</strong>:</p>
+<ul>
+<li>Install SQLite using the following command.</li>
+</ul>
+</li>
+</ol>
+<pre><code class="language-bash">sudo yum install sqlite
+</code></pre>
+<ol>
+<li>
+<p><strong>Verify Installation</strong>:</p>
+<ul>
+<li>Check the installed version of SQLite to ensure it is installed correctly.</li>
+</ul>
+</li>
+</ol>
+<pre><code class="language-bash">sqlite3 --version
+</code></pre>
+<ol>
+<li>
+<p><strong>Install SQLite Development Libraries (Optional)</strong>:</p>
+<ul>
+<li>If you need to develop SQLite applications, install the development libraries.</li>
+</ul>
+</li>
+</ol>
+<pre><code class="language-bash">sudo yum install sqlite-devel
+</code></pre>
+<h4 id="4_building_sqlite_from_source">4. Building SQLite from Source<a class="headerlink" href="#4_building_sqlite_from_source" title="Permanent link">#</a></h4>
+<p>In some cases, you might want to build SQLite from source to get the latest features or specific optimizations. Here are the steps to build SQLite from source:</p>
+<ol>
+<li>
+<p><strong>Install Build Tools</strong>:</p>
+<ul>
+<li>Ensure you have the necessary build tools installed on your system.</li>
+</ul>
+</li>
+</ol>
+<pre><code class="language-bash">sudo apt update
+sudo apt install build-essential
+</code></pre>
+<ol>
+<li>
+<p><strong>Download SQLite Source Code</strong>:</p>
+<ul>
+<li>Download the latest source code from the <a href="https://www.sqlite.org/download.html">official SQLite website</a>.</li>
+</ul>
+</li>
+</ol>
+<pre><code class="language-bash">wget https://www.sqlite.org/2024/sqlite-autoconf-3390400.tar.gz
+</code></pre>
+<ol>
+<li>
+<p><strong>Extract the Tarball</strong>:</p>
+<ul>
+<li>Extract the downloaded tarball.</li>
+</ul>
+</li>
+</ol>
+<pre><code class="language-bash">tar xvf sqlite-autoconf-3390400.tar.gz
+</code></pre>
+<ol>
+<li>
+<p><strong>Compile and Install</strong>:</p>
+<ul>
+<li>Navigate to the extracted directory, configure, compile, and install SQLite.</li>
+</ul>
+</li>
+</ol>
+<pre><code class="language-bash">cd sqlite-autoconf-3390400
+./configure
+make
+sudo make install
+</code></pre>
+<ol>
+<li>
+<p><strong>Verify Installation</strong>:</p>
+<ul>
+<li>Finally, verify the installation by checking the SQLite version.</li>
+</ul>
+</li>
+</ol>
+<pre><code class="language-bash">sqlite3 --version
+</code></pre>
+<h3 id="post-installation_steps">Post-Installation Steps<a class="headerlink" href="#post-installation_steps" title="Permanent link">#</a></h3>
+<ol>
+<li>
+<p><strong>Creating a Database</strong>:</p>
+<ul>
+<li>To create a new SQLite database, simply run the <code>sqlite3</code> command followed by the desired database name. For example:</li>
+</ul>
+</li>
+</ol>
+<pre><code class="language-bash">sqlite3 mydatabase.db
+</code></pre>
+<pre><code>- This command creates a new database file named `mydatabase.db` and opens the SQLite shell.
+</code></pre>
+<ol>
+<li>
+<p><strong>Opening the SQLite Shell</strong>:</p>
+<ul>
+<li>If you want to open the SQLite shell without creating a new database, simply run:</li>
+</ul>
+</li>
+</ol>
+<pre><code class="language-bash">sqlite3
+</code></pre>
+<ol>
+<li>
+<p><strong>Basic SQLite Commands</strong>:</p>
+<ul>
+<li>Within the SQLite shell, you can execute basic SQL commands to create tables, insert data, and query the database. Here are a few examples:</li>
+</ul>
+</li>
+</ol>
+<pre><code class="language-sql">CREATE TABLE users (id INTEGER PRIMARY KEY, name TEXT, email TEXT);
+INSERT INTO users (name, email) VALUES ('John Doe', 'john.doe@example.com');
+SELECT * FROM users;
+</code></pre>
+<p>By following these steps, you will have SQLite installed and ready to use on your Linux system. Whether you're using it for local development, data analysis, or as an embedded database in your applications, SQLite provides a robust and easy-to-use solution.</p>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+      <p><b>Essential Guide to SQLite</b> <br>Copyright &#169; 2024 <a href="https://github.com/imarranz">Ibon Martínez-Arranz</a><br></p>
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/imarranz/essential-guide-to-sqlite" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../01_introduction/013_use_cases.html" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="022_first_steps.html" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

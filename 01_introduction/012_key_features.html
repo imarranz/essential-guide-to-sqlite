@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Ibon Martínez-Arranz" /><link rel="canonical" href="https://github.com/imarranz/essential-guide-to-sqlite/01_introduction/012_key_features.html" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Key Features - Essential Guide to SQLite</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../css/custom.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Key Features";
+        var mkdocs_page_input_path = "01_introduction/012_key_features.md";
+        var mkdocs_page_url = "/imarranz/essential-guide-to-sqlite/01_introduction/012_key_features.html";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/yaml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/python.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/bash.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../index.html" class="icon icon-home"> Essential Guide to SQLite
+        </a>
+        <div class="version">
+          1.0
+        </div><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../index.html">Essential Guide to SQLite</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Introduction to SQLite</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="011_overview_of_sqlite.html">Overview of SQLite</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="012_key_features.html">Key Features</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="013_use_cases.html">Use Cases</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Installing SQLite</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../02_installing/021_installation_on_linux.html">Installation on Linux</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../02_installing/022_first_steps.html">First Steps</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Using SQLite in Command Line</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../03_command/031_launching_sqlite_console.html">Launching SQLite Console</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../03_command/032_basic_commands.html">Basic Commands</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Introduction to the Northwind Database</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../04_northwind/041_overview_of_the_northwind_database.html">Overview of the Northwind Database</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../04_northwind/042_schema_and_relationships.html">Schema and Relationships</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Basic SQL Commands</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../05_basic/051_creating_tables.html">Creating Tables</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../05_basic/052_inserting_data.html">Inserting Data</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../05_basic/053_selecting_data.html">Selecting Data</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../05_basic/054_examples.html">Examples</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Advanced SQL Commands</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../06_advanced/061_updating_data.html">Updating Data</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../06_advanced/062_deleting_data.html">Deleting Data</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../06_advanced/063_using_where_clause.html">Using WHERE Clause</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../06_advanced/064_sorting_results_with_order_by.html">Sorting Results with ORDER BY</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../06_advanced/065_examples.html">Examples</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Complex Queries</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../07_complex/071_aggregate_functions.html">Aggregate Functions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../07_complex/072_grouping_results_with_group_by.html">Grouping Results with GROUP BY</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../07_complex/073_filtering_groups_with_having.html">Filtering Groups with HAVING</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../07_complex/074_examples.html">Examples</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Joins</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../08_joins/081_understanding_joins.html">Understanding Joins</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../08_joins/082_inner_join.html">Inner Join</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../08_joins/083_left_join.html">Left Join</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../08_joins/084_right_join.html">Right Join</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../08_joins/085_full_join.html">Full Join</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../08_joins/086_examples.html">Examples</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">SQLite with Python</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../09_python/091_setting_up_sqlite_in_python.html">Setting Up SQLite in Python</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../09_python/092_performing_basic_operations.html">Performing Basic Operations</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../09_python/093_handling_transactions.html">Handling Transactions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../09_python/094_error_handling.html">Error Handling</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../09_python/095_examples.html">Examples</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">SQLite with Jupyter</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../10_jupyter/101_installing_libraries.html">Installing Necessary Libraries</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../10_jupyter/102_running_sqlite_queries_in_jupyter.html">Running SQLite Queries in Jupyter</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../10_jupyter/103_visualizing_data_with_sqlite_and_pandas.html">Visualizing Data with SQLite and Pandas</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Additional Resources and Further Reading</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../11_resources/111_official_documentation.html">Official Documentation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../11_resources/112_community_resources.html">Community Resources</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../11_resources/113_books_and_tutorials.html">Books and Tutorials</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Essential Guide to SQLite</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html" class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
+          <li>Introduction to SQLite &raquo;</li>
+      <li class="breadcrumb-item active">Key Features</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/imarranz/essential-guide-to-sqlite/edit/master/docs/01_introduction/012_key_features.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+    <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Breadcrumb Navigation">
+        <a href="011_overview_of_sqlite.html" class="btn btn-neutral float-left" title="Overview of SQLite"><span class="icon icon-circle-arrow-left" aria-hidden="true"></span> Previous</a>
+        <a href="013_use_cases.html" class="btn btn-neutral float-right" title="Use Cases">Next <span class="icon icon-circle-arrow-right" aria-hidden="true"></span></a>
+    </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <div class="toc">
+<ul>
+<li><a href="#introduction_to_sqlite">Introduction to SQLite</a><ul>
+<li><a href="#key_features">Key Features</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<hr />
+<h2 id="introduction_to_sqlite">Introduction to SQLite<a class="headerlink" href="#introduction_to_sqlite" title="Permanent link">#</a></h2>
+<h3 id="key_features">Key Features<a class="headerlink" href="#key_features" title="Permanent link">#</a></h3>
+<p>SQLite is renowned for its simplicity, reliability, and efficiency. These characteristics make it an ideal choice for various applications, including Data Science. Below are the key features that distinguish SQLite from other database management systems:</p>
+<ol>
+<li>
+<p><strong>Self-contained</strong>: SQLite is a single library that implements a complete, self-contained SQL database engine. This means there is no need for separate server processes, configurations, or dependencies. The entire database, including definitions, tables, indices, and the data itself, is stored in a single, cross-platform disk file. This simplicity makes SQLite easy to deploy and manage, reducing potential points of failure and maintenance overhead. Data scientists can quickly set up and manage databases without worrying about complex server configurations.<br><br></p>
+</li>
+<li>
+<p><strong>Zero-Configuration</strong>: As a serverless database, SQLite requires no installation or setup. It is ready to use out of the box, which simplifies deployment and reduces administrative overhead. This feature is particularly beneficial for developers and data scientists who want to avoid the complexities of traditional database configuration and management. You can start using SQLite by simply including the library and creating a database file. This ease of use allows data scientists to focus on data analysis rather than database administration.<br><br></p>
+</li>
+<li>
+<p><strong>Portable</strong>: SQLite databases are stored in a single file, making it easy to transfer and share between different systems and environments. This portability is a significant advantage for projects that require data sharing or version control. Whether you're moving a database between development and production environments or sharing it with colleagues, SQLite's single-file format ensures that all data and schema definitions are preserved accurately. This feature is particularly useful in collaborative Data Science projects where datasets need to be shared and worked on across different teams and platforms.<br><br></p>
+</li>
+<li>
+<p><strong>Transactional</strong>: SQLite supports ACID (Atomicity, Consistency, Isolation, Durability) properties, ensuring reliable and consistent data handling. Transactions in SQLite are fully isolated and provide a guarantee that changes are either fully applied or not applied at all, even in the event of a system crash or power failure. This robustness is crucial for applications that require reliable data storage and consistency. For data scientists, this means that data transformations and manipulations can be performed with confidence, knowing that the integrity of the data will be maintained.<br><br></p>
+</li>
+<li>
+<p><strong>Lightweight</strong>: The entire SQLite library typically ranges from 500KB to 1MB, making it suitable for embedded systems and applications with limited resources. Despite its small footprint, SQLite offers a rich feature set, including support for most of the SQL-92 standard. Its efficiency and low resource consumption make it an excellent choice for applications ranging from mobile apps to large-scale data analysis. In Data Science, where computational resources can be a limiting factor, SQLite's lightweight nature ensures that it does not consume unnecessary system resources, allowing more processing power to be dedicated to data analysis tasks.<br><br></p>
+</li>
+<li>
+<p><strong>Versatile Data Types</strong>: SQLite supports a variety of data types, including integers, floating-point numbers, text, blobs (binary large objects), and more. This versatility allows data scientists to store different types of data in a single database efficiently. Whether dealing with numerical data, categorical data, or large binary files, SQLite can handle it all within a unified framework.<br><br></p>
+</li>
+<li>
+<p><strong>Comprehensive SQL Support</strong>: SQLite implements most of the SQL-92 standard, providing robust support for complex queries, joins, indexing, and transactions. This comprehensive SQL support enables data scientists to perform sophisticated data analysis and manipulation using familiar SQL syntax. Complex queries involving multiple tables and advanced filtering criteria can be executed efficiently, facilitating in-depth data exploration and analysis.<br><br></p>
+</li>
+<li>
+<p><strong>Extensibility</strong>: SQLite allows the creation of custom functions and extensions to extend its functionality. Data scientists can define custom SQL functions to perform specialized calculations or transformations directly within the database. This extensibility makes it possible to tailor SQLite to specific analytical needs, enhancing its utility in Data Science projects.<br><br></p>
+</li>
+<li>
+<p><strong>Integration with Development Tools</strong>: SQLite integrates seamlessly with various development environments and tools. It is supported by many programming languages, including Python, C, C++, and Java. For data scientists who predominantly use Python, the <code>sqlite3</code> module in the Python standard library provides an easy and efficient way to interact with SQLite databases. This integration simplifies the workflow, enabling smooth data ingestion, processing, and analysis.<br><br></p>
+</li>
+<li>
+<p><strong>Open Source and Free</strong>: SQLite is open source and released into the public domain, meaning it is free to use for any purpose, including commercial applications. This accessibility makes it an attractive option for data scientists and developers who need a cost-effective, reliable database solution.</p>
+</li>
+</ol>
+<p>In summary, SQLite's self-contained nature, ease of use, portability, transactional integrity, and lightweight design make it a powerful tool for data storage and management. Its comprehensive SQL support, extensibility, and seamless integration with development tools further enhance its appeal in the field of Data Science. Whether for rapid prototyping, large-scale data analysis, or as an embedded database solution, SQLite offers a robust and versatile platform that meets the diverse needs of data scientists.</p>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+      <p><b>Essential Guide to SQLite</b> <br>Copyright &#169; 2024 <a href="https://github.com/imarranz">Ibon Martínez-Arranz</a><br></p>
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/imarranz/essential-guide-to-sqlite" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="011_overview_of_sqlite.html" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="013_use_cases.html" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

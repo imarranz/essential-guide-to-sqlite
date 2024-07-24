@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Ibon Martínez-Arranz" /><link rel="canonical" href="https://github.com/imarranz/essential-guide-to-sqlite/08_joins/086_examples.html" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Examples - Essential Guide to SQLite</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../css/custom.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Examples";
+        var mkdocs_page_input_path = "08_joins/086_examples.md";
+        var mkdocs_page_url = "/imarranz/essential-guide-to-sqlite/08_joins/086_examples.html";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/yaml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/python.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/bash.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../index.html" class="icon icon-home"> Essential Guide to SQLite
+        </a>
+        <div class="version">
+          1.0
+        </div><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../index.html">Essential Guide to SQLite</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Introduction to SQLite</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../01_introduction/011_overview_of_sqlite.html">Overview of SQLite</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../01_introduction/012_key_features.html">Key Features</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../01_introduction/013_use_cases.html">Use Cases</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Installing SQLite</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../02_installing/021_installation_on_linux.html">Installation on Linux</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../02_installing/022_first_steps.html">First Steps</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Using SQLite in Command Line</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../03_command/031_launching_sqlite_console.html">Launching SQLite Console</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../03_command/032_basic_commands.html">Basic Commands</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Introduction to the Northwind Database</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../04_northwind/041_overview_of_the_northwind_database.html">Overview of the Northwind Database</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../04_northwind/042_schema_and_relationships.html">Schema and Relationships</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Basic SQL Commands</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../05_basic/051_creating_tables.html">Creating Tables</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../05_basic/052_inserting_data.html">Inserting Data</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../05_basic/053_selecting_data.html">Selecting Data</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../05_basic/054_examples.html">Examples</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Advanced SQL Commands</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../06_advanced/061_updating_data.html">Updating Data</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../06_advanced/062_deleting_data.html">Deleting Data</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../06_advanced/063_using_where_clause.html">Using WHERE Clause</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../06_advanced/064_sorting_results_with_order_by.html">Sorting Results with ORDER BY</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../06_advanced/065_examples.html">Examples</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Complex Queries</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../07_complex/071_aggregate_functions.html">Aggregate Functions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../07_complex/072_grouping_results_with_group_by.html">Grouping Results with GROUP BY</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../07_complex/073_filtering_groups_with_having.html">Filtering Groups with HAVING</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../07_complex/074_examples.html">Examples</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Joins</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="081_understanding_joins.html">Understanding Joins</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="082_inner_join.html">Inner Join</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="083_left_join.html">Left Join</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="084_right_join.html">Right Join</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="085_full_join.html">Full Join</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="086_examples.html">Examples</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">SQLite with Python</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../09_python/091_setting_up_sqlite_in_python.html">Setting Up SQLite in Python</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../09_python/092_performing_basic_operations.html">Performing Basic Operations</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../09_python/093_handling_transactions.html">Handling Transactions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../09_python/094_error_handling.html">Error Handling</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../09_python/095_examples.html">Examples</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">SQLite with Jupyter</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../10_jupyter/101_installing_libraries.html">Installing Necessary Libraries</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../10_jupyter/102_running_sqlite_queries_in_jupyter.html">Running SQLite Queries in Jupyter</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../10_jupyter/103_visualizing_data_with_sqlite_and_pandas.html">Visualizing Data with SQLite and Pandas</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Additional Resources and Further Reading</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../11_resources/111_official_documentation.html">Official Documentation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../11_resources/112_community_resources.html">Community Resources</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../11_resources/113_books_and_tutorials.html">Books and Tutorials</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Essential Guide to SQLite</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html" class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
+          <li>Joins &raquo;</li>
+      <li class="breadcrumb-item active">Examples</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/imarranz/essential-guide-to-sqlite/edit/master/docs/08_joins/086_examples.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+    <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Breadcrumb Navigation">
+        <a href="085_full_join.html" class="btn btn-neutral float-left" title="Full Join"><span class="icon icon-circle-arrow-left" aria-hidden="true"></span> Previous</a>
+        <a href="../09_python/091_setting_up_sqlite_in_python.html" class="btn btn-neutral float-right" title="Setting Up SQLite in Python">Next <span class="icon icon-circle-arrow-right" aria-hidden="true"></span></a>
+    </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <div class="toc">
+<ul>
+<li><a href="#joins">Joins</a><ul>
+<li><a href="#examples">Examples</a><ul>
+<li><a href="#tables_for_examples">Tables for Examples</a></li>
+<li><a href="#inner_join">Inner Join</a></li>
+<li><a href="#left_join">Left Join</a></li>
+<li><a href="#right_join">Right Join</a></li>
+<li><a href="#full_join">Full Join</a></li>
+<li><a href="#joining_multiple_tables">Joining Multiple Tables</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<hr />
+<h2 id="joins">Joins<a class="headerlink" href="#joins" title="Permanent link">#</a></h2>
+<h3 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">#</a></h3>
+<p>In this section, we will provide several examples demonstrating how to use different types of joins in SQLite. These examples will cover inner joins, left joins, right joins, and full joins using Python's <code>sqlite3</code> module. We will use the <code>customers</code> and <code>orders</code> tables to illustrate these join operations.</p>
+<h4 id="tables_for_examples">Tables for Examples<a class="headerlink" href="#tables_for_examples" title="Permanent link">#</a></h4>
+<p>To follow along with the examples, let's create the <code>customers</code> and <code>orders</code> tables with some sample data.</p>
+<p><strong>Customers Table</strong>:</p>
+<pre><code class="language-sql">CREATE TABLE customers (
+    CustomerID INTEGER PRIMARY KEY,
+    CustomerName TEXT NOT NULL,
+    ContactName TEXT,
+    Country TEXT
+);
+
+INSERT INTO customers (CustomerID, CustomerName, ContactName, Country) VALUES
+(1, 'Alfreds Futterkiste', 'Maria Anders', 'Germany'),
+(2, 'Ana Trujillo Emparedados y helados', 'Ana Trujillo', 'Mexico'),
+(3, 'Antonio Moreno Taquería', 'Antonio Moreno', 'Mexico'),
+(4, 'Around the Horn', 'Thomas Hardy', 'UK'),
+(5, 'Berglunds snabbköp', 'Christina Berglund', 'Sweden'),
+(6, 'Blauer See Delikatessen', 'Hanna Moos', 'Germany');
+</code></pre>
+<p><strong>Orders Table</strong>:</p>
+<pre><code class="language-sql">CREATE TABLE orders (
+    OrderID INTEGER PRIMARY KEY,
+    CustomerID INTEGER,
+    OrderDate TEXT,
+    FOREIGN KEY (CustomerID) REFERENCES customers(CustomerID)
+);
+
+INSERT INTO orders (OrderID, CustomerID, OrderDate) VALUES
+(10248, 1, '2024-07-04'),
+(10249, 2, '2024-07-05'),
+(10250, 3, '2024-07-06'),
+(10251, 4, '2024-07-07'),
+(10252, 5, '2024-07-08'),
+(10253, 7, '2024-07-09'),
+(10254, 8, '2024-07-10');
+</code></pre>
+<h4 id="inner_join">Inner Join<a class="headerlink" href="#inner_join" title="Permanent link">#</a></h4>
+<p>An inner join returns only the rows that have matching values in both tables.</p>
+<p><strong>Code</strong>:</p>
+<pre><code class="language-python">import sqlite3
+
+# Connect to the SQLite database
+conn = sqlite3.connect('example.db')
+
+# Create a cursor object
+cursor = conn.cursor()
+
+# Perform an inner join
+cursor.execute('''
+SELECT customers.CustomerName, orders.OrderID
+FROM customers
+INNER JOIN orders
+ON customers.CustomerID = orders.CustomerID
+LIMIT 10;
+''')
+
+# Fetch and print the results
+rows = cursor.fetchall()
+for row in rows:
+    print(row)
+
+# Close the cursor and connection
+cursor.close()
+conn.close()
+</code></pre>
+<p><strong>Explanation</strong>:</p>
+<p>This query selects the <code>CustomerName</code> from the <code>customers</code> table and the <code>OrderID</code> from the <code>orders</code> table where the <code>CustomerID</code> matches in both tables.</p>
+<p><strong>Output</strong>:</p>
+<pre><code class="language-plaintext">('Alfreds Futterkiste', 10248)
+('Ana Trujillo Emparedados y helados', 10249)
+('Antonio Moreno Taquería', 10250)
+('Around the Horn', 10251)
+('Berglunds snabbköp', 10252)
+</code></pre>
+<h4 id="left_join">Left Join<a class="headerlink" href="#left_join" title="Permanent link">#</a></h4>
+<p>A left join returns all records from the left table and the matched records from the right table. The result is <code>NULL</code> from the right side if there is no match.</p>
+<p><strong>Code</strong>:</p>
+<pre><code class="language-python">import sqlite3
+
+# Connect to the SQLite database
+conn = sqlite3.connect('example.db')
+
+# Create a cursor object
+cursor = conn.cursor()
+
+# Perform a left join
+cursor.execute('''
+SELECT customers.CustomerName, orders.OrderID
+FROM customers
+LEFT JOIN orders
+ON customers.CustomerID = orders.CustomerID
+LIMIT 10;
+''')
+
+# Fetch and print the results
+rows = cursor.fetchall()
+for row in rows:
+    print(row)
+
+# Close the cursor and connection
+cursor.close()
+conn.close()
+</code></pre>
+<p><strong>Explanation</strong>:</p>
+<p>This query selects the <code>CustomerName</code> from the <code>customers</code> table and the <code>OrderID</code> from the <code>orders</code> table, returning all customers and their corresponding orders. If a customer does not have an order, the <code>OrderID</code> will be <code>NULL</code>.</p>
+<p><strong>Output</strong>:</p>
+<pre><code class="language-plaintext">('Alfreds Futterkiste', 10248)
+('Ana Trujillo Emparedados y helados', 10249)
+('Antonio Moreno Taquería', 10250)
+('Around the Horn', 10251)
+('Berglunds snabbköp', 10252)
+('Blauer See Delikatessen', None)
+</code></pre>
+<h4 id="right_join">Right Join<a class="headerlink" href="#right_join" title="Permanent link">#</a></h4>
+<p>A right join returns all records from the right table and the matched records from the left table. The result is <code>NULL</code> from the left side if there is no match.</p>
+<p><strong>Note:</strong> SQLite does not support the <code>RIGHT JOIN</code> directly. Instead, you can achieve the functionality of a right join by reversing the table order and using a left join.</p>
+<p><strong>Code</strong>:</p>
+<pre><code class="language-python">import sqlite3
+
+# Connect to the SQLite database
+conn = sqlite3.connect('example.db')
+
+# Create a cursor object
+cursor = conn.cursor()
+
+# Perform a right join (simulated with left join)
+cursor.execute('''
+SELECT orders.OrderID, customers.CustomerName
+FROM orders
+LEFT JOIN customers
+ON orders.CustomerID = customers.CustomerID
+LIMIT 10;
+''')
+
+# Fetch and print the results
+rows = cursor.fetchall()
+for row in rows:
+    print(row)
+
+# Close the cursor and connection
+cursor.close()
+conn.close()
+</code></pre>
+<p><strong>Explanation</strong>:</p>
+<p>This query selects the <code>OrderID</code> from the <code>orders</code> table and the <code>CustomerName</code> from the <code>customers</code> table, returning all orders and their corresponding customers. If an order does not have a matching customer, the <code>CustomerName</code> will be <code>NULL</code>.</p>
+<p><strong>Output</strong>:</p>
+<pre><code class="language-plaintext">(10248, 'Alfreds Futterkiste')
+(10249, 'Ana Trujillo Emparedados y helados')
+(10250, 'Antonio Moreno Taquería')
+(10251, 'Around the Horn')
+(10252, 'Berglunds snabbköp')
+(10253, None)
+(10254, None)
+</code></pre>
+<h4 id="full_join">Full Join<a class="headerlink" href="#full_join" title="Permanent link">#</a></h4>
+<p>A full join returns all records when there is a match in either the left or right table. The result is <code>NULL</code> from either side when there is no match.</p>
+<p><strong>Note:</strong> SQLite does not support the <code>FULL JOIN</code> directly. Instead, you can achieve the functionality of a full join by combining the results of a left join and a right join using a <code>UNION</code>.</p>
+<p><strong>Code</strong>:</p>
+<pre><code class="language-python">import sqlite3
+
+# Connect to the SQLite database
+conn = sqlite3.connect('example.db')
+
+# Create a cursor object
+cursor = conn.cursor()
+
+# Perform a full join (simulated with left join and union)
+cursor.execute('''
+SELECT customers.CustomerName, orders.OrderID
+FROM customers
+LEFT JOIN orders
+ON customers.CustomerID = orders.CustomerID
+UNION
+SELECT customers.CustomerName, orders.OrderID
+FROM orders
+LEFT JOIN customers
+ON orders.CustomerID = customers.CustomerID
+LIMIT 10;
+''')
+
+# Fetch and print the results
+rows = cursor.fetchall()
+for row in rows:
+    print(row)
+
+# Close the cursor and connection
+cursor.close()
+conn.close()
+</code></pre>
+<p><strong>Explanation</strong>:</p>
+<p>This query selects the <code>CustomerName</code> from the <code>customers</code> table and the <code>OrderID</code> from the <code>orders</code> table, performing a left join first and then a right join (by reversing the table order) to include all records from both tables.</p>
+<p><strong>Output</strong>:</p>
+<pre><code class="language-plaintext">('Alfreds Futterkiste', 10248)
+('Ana Trujillo Emparedados y helados', 10249)
+('Antonio Moreno Taquería', 10250)
+('Around the Horn', 10251)
+('Berglunds snabbköp', 10252)
+('Blauer See Delikatessen', None)
+(None, 10253)
+(None, 10254)
+</code></pre>
+<h4 id="joining_multiple_tables">Joining Multiple Tables<a class="headerlink" href="#joining_multiple_tables" title="Permanent link">#</a></h4>
+<p>You can perform joins on more than two tables to combine data from multiple sources. Assume we have an additional <code>employees</code> table:</p>
+<p><strong>Employees Table</strong>:</p>
+<pre><code class="language-sql">CREATE TABLE employees (
+    EmployeeID INTEGER PRIMARY KEY,
+    EmployeeName TEXT NOT NULL,
+    Title TEXT
+);
+
+INSERT INTO employees (EmployeeID, EmployeeName, Title) VALUES
+(1, 'Nancy Davolio', 'Sales Representative'),
+(2, 'Andrew Fuller', 'Vice President'),
+(3, 'Janet Leverling', 'Sales Representative');
+</code></pre>
+<p><strong>Code</strong>:</p>
+<pre><code class="language-python">import sqlite3
+
+# Connect to the SQLite database
+conn = sqlite3.connect('example.db')
+
+# Create a cursor object
+cursor = conn.cursor()
+
+# Perform a join with multiple tables
+cursor.execute('''
+SELECT o.OrderID, c.CustomerName, e.EmployeeName
+FROM orders AS o
+LEFT JOIN customers AS c
+ON o.CustomerID = c.CustomerID
+LEFT JOIN employees AS e
+ON o.CustomerID = e.EmployeeID
+LIMIT 10;
+''')
+
+# Fetch and print the results
+rows = cursor.fetchall()
+for row in rows:
+    print(row)
+
+# Close the cursor and connection
+cursor.close()
+conn.close()
+</code></pre>
+<p><strong>Explanation</strong>:</p>
+<p>This query joins three tables (<code>orders</code>, <code>customers</code>, and <code>employees</code>) on their respective matching columns to provide a more comprehensive result set. Since we use left joins, all records from the <code>orders</code> table will be included in the results, even if they</p>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+      <p><b>Essential Guide to SQLite</b> <br>Copyright &#169; 2024 <a href="https://github.com/imarranz">Ibon Martínez-Arranz</a><br></p>
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/imarranz/essential-guide-to-sqlite" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="085_full_join.html" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../09_python/091_setting_up_sqlite_in_python.html" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

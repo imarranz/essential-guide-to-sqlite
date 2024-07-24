@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Ibon Martínez-Arranz" /><link rel="canonical" href="https://github.com/imarranz/essential-guide-to-sqlite/04_northwind/041_overview_of_the_northwind_database.html" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Overview of the Northwind Database - Essential Guide to SQLite</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../css/custom.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Overview of the Northwind Database";
+        var mkdocs_page_input_path = "04_northwind/041_overview_of_the_northwind_database.md";
+        var mkdocs_page_url = "/imarranz/essential-guide-to-sqlite/04_northwind/041_overview_of_the_northwind_database.html";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/yaml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/python.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/bash.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../index.html" class="icon icon-home"> Essential Guide to SQLite
+        </a>
+        <div class="version">
+          1.0
+        </div><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../index.html">Essential Guide to SQLite</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Introduction to SQLite</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../01_introduction/011_overview_of_sqlite.html">Overview of SQLite</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../01_introduction/012_key_features.html">Key Features</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../01_introduction/013_use_cases.html">Use Cases</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Installing SQLite</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../02_installing/021_installation_on_linux.html">Installation on Linux</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../02_installing/022_first_steps.html">First Steps</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Using SQLite in Command Line</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../03_command/031_launching_sqlite_console.html">Launching SQLite Console</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../03_command/032_basic_commands.html">Basic Commands</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Introduction to the Northwind Database</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" href="041_overview_of_the_northwind_database.html">Overview of the Northwind Database</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="042_schema_and_relationships.html">Schema and Relationships</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Basic SQL Commands</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../05_basic/051_creating_tables.html">Creating Tables</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../05_basic/052_inserting_data.html">Inserting Data</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../05_basic/053_selecting_data.html">Selecting Data</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../05_basic/054_examples.html">Examples</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Advanced SQL Commands</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../06_advanced/061_updating_data.html">Updating Data</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../06_advanced/062_deleting_data.html">Deleting Data</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../06_advanced/063_using_where_clause.html">Using WHERE Clause</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../06_advanced/064_sorting_results_with_order_by.html">Sorting Results with ORDER BY</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../06_advanced/065_examples.html">Examples</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Complex Queries</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../07_complex/071_aggregate_functions.html">Aggregate Functions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../07_complex/072_grouping_results_with_group_by.html">Grouping Results with GROUP BY</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../07_complex/073_filtering_groups_with_having.html">Filtering Groups with HAVING</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../07_complex/074_examples.html">Examples</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Joins</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../08_joins/081_understanding_joins.html">Understanding Joins</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../08_joins/082_inner_join.html">Inner Join</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../08_joins/083_left_join.html">Left Join</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../08_joins/084_right_join.html">Right Join</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../08_joins/085_full_join.html">Full Join</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../08_joins/086_examples.html">Examples</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">SQLite with Python</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../09_python/091_setting_up_sqlite_in_python.html">Setting Up SQLite in Python</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../09_python/092_performing_basic_operations.html">Performing Basic Operations</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../09_python/093_handling_transactions.html">Handling Transactions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../09_python/094_error_handling.html">Error Handling</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../09_python/095_examples.html">Examples</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">SQLite with Jupyter</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../10_jupyter/101_installing_libraries.html">Installing Necessary Libraries</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../10_jupyter/102_running_sqlite_queries_in_jupyter.html">Running SQLite Queries in Jupyter</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../10_jupyter/103_visualizing_data_with_sqlite_and_pandas.html">Visualizing Data with SQLite and Pandas</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Additional Resources and Further Reading</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../11_resources/111_official_documentation.html">Official Documentation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../11_resources/112_community_resources.html">Community Resources</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../11_resources/113_books_and_tutorials.html">Books and Tutorials</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Essential Guide to SQLite</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html" class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
+          <li>Introduction to the Northwind Database &raquo;</li>
+      <li class="breadcrumb-item active">Overview of the Northwind Database</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/imarranz/essential-guide-to-sqlite/edit/master/docs/04_northwind/041_overview_of_the_northwind_database.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+    <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Breadcrumb Navigation">
+        <a href="../03_command/032_basic_commands.html" class="btn btn-neutral float-left" title="Basic Commands"><span class="icon icon-circle-arrow-left" aria-hidden="true"></span> Previous</a>
+        <a href="042_schema_and_relationships.html" class="btn btn-neutral float-right" title="Schema and Relationships">Next <span class="icon icon-circle-arrow-right" aria-hidden="true"></span></a>
+    </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <div class="toc">
+<ul>
+<li><a href="#introduction_to_the_northwind_database">Introduction to the Northwind Database</a><ul>
+<li><a href="#overview_of_the_northwind_database">Overview of the Northwind Database</a><ul>
+<li><a href="#key_tables_and_their_descriptions">Key Tables and Their Descriptions</a></li>
+<li><a href="#references_and_additional_resources">References and Additional Resources</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<hr />
+<h2 id="introduction_to_the_northwind_database">Introduction to the Northwind Database<a class="headerlink" href="#introduction_to_the_northwind_database" title="Permanent link">#</a></h2>
+<h3 id="overview_of_the_northwind_database">Overview of the Northwind Database<a class="headerlink" href="#overview_of_the_northwind_database" title="Permanent link">#</a></h3>
+<p>The Northwind database is a well-known sample database created by Microsoft, designed to simulate a company's sales and distribution operations. It provides a rich set of tables and relationships that are excellent for practicing various SQL queries and database operations. The Northwind database is widely used for educational purposes, tutorials, and as a benchmark for testing SQL functionalities.</p>
+<h4 id="key_tables_and_their_descriptions">Key Tables and Their Descriptions<a class="headerlink" href="#key_tables_and_their_descriptions" title="Permanent link">#</a></h4>
+<p>The Northwind database contains multiple tables that represent different aspects of a company's operations, including customers, orders, products, and employees. Below are some of the key tables along with their descriptions:</p>
+<ul>
+<li>
+<p><strong>Customers</strong>:</p>
+<ul>
+<li>
+<p><strong>Description</strong>: This table contains information about the company's customers.</p>
+</li>
+<li>
+<p><strong>Columns</strong>:</p>
+<ul>
+<li><code>CustomerID</code>: A unique identifier for each customer.</li>
+<li><code>CompanyName</code>: The name of the customer's company.</li>
+<li><code>ContactName</code>: The name of the contact person at the customer's company.</li>
+<li><code>ContactTitle</code>: The title of the contact person.</li>
+<li><code>Address</code>: The street address of the customer.</li>
+<li><code>City</code>: The city where the customer is located.</li>
+<li><code>Region</code>: The region where the customer is located.</li>
+<li><code>PostalCode</code>: The postal code of the customer's location.</li>
+<li><code>Country</code>: The country where the customer is located.</li>
+<li><code>Phone</code>: The customer's phone number.</li>
+<li><code>Fax</code>: The customer's fax number (if any).</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Orders</strong>:</p>
+<ul>
+<li>
+<p><strong>Description</strong>: This table records all the orders placed by customers.</p>
+</li>
+<li>
+<p><strong>Columns</strong>:</p>
+<ul>
+<li><code>OrderID</code>: A unique identifier for each order.</li>
+<li><code>CustomerID</code>: The identifier of the customer who placed the order.</li>
+<li><code>EmployeeID</code>: The identifier of the employee who processed the order.</li>
+<li><code>OrderDate</code>: The date the order was placed.</li>
+<li><code>RequiredDate</code>: The date by which the order is required.</li>
+<li><code>ShippedDate</code>: The date the order was shipped.</li>
+<li><code>ShipVia</code>: The identifier of the shipping method used.</li>
+<li><code>Freight</code>: The shipping cost for the order.</li>
+<li><code>ShipName</code>: The name of the shipper.</li>
+<li><code>ShipAddress</code>: The shipping address.</li>
+<li><code>ShipCity</code>: The city where the order is to be shipped.</li>
+<li><code>ShipRegion</code>: The region where the order is to be shipped.</li>
+<li><code>ShipPostalCode</code>: The postal code of the shipping address.</li>
+<li><code>ShipCountry</code>: The country where the order is to be shipped.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Order Details</strong>:</p>
+<ul>
+<li>
+<p><strong>Description</strong>: This table contains details about each product included in an order.</p>
+</li>
+<li>
+<p><strong>Columns</strong>:</p>
+<ul>
+<li><code>OrderID</code>: The identifier of the order.</li>
+<li><code>ProductID</code>: The identifier of the product.</li>
+<li><code>UnitPrice</code>: The price of a single unit of the product.</li>
+<li><code>Quantity</code>: The quantity of the product ordered.</li>
+<li><code>Discount</code>: The discount applied to the product (if any).</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Products</strong>:</p>
+<ul>
+<li>
+<p><strong>Description</strong>: This table lists all the products available for sale.</p>
+</li>
+<li>
+<p><strong>Columns</strong>:</p>
+<ul>
+<li><code>ProductID</code>: A unique identifier for each product.</li>
+<li><code>ProductName</code>: The name of the product.</li>
+<li><code>SupplierID</code>: The identifier of the supplier of the product.</li>
+<li><code>CategoryID</code>: The identifier of the category to which the product belongs.</li>
+<li><code>QuantityPerUnit</code>: The quantity of the product per unit.</li>
+<li><code>UnitPrice</code>: The price of a single unit of the product.</li>
+<li><code>UnitsInStock</code>: The number of units of the product currently in stock.</li>
+<li><code>UnitsOnOrder</code>: The number of units of the product currently on order.</li>
+<li><code>ReorderLevel</code>: The level of stock at which the product should be reordered.</li>
+<li><code>Discontinued</code>: A flag indicating whether the product is discontinued.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Suppliers</strong>:</p>
+<ul>
+<li>
+<p><strong>Description</strong>: This table contains information about the suppliers who provide products to the company.</p>
+</li>
+<li>
+<p><strong>Columns</strong>:</p>
+<ul>
+<li><code>SupplierID</code>: A unique identifier for each supplier.</li>
+<li><code>CompanyName</code>: The name of the supplier's company.</li>
+<li><code>ContactName</code>: The name of the contact person at the supplier's company.</li>
+<li><code>ContactTitle</code>: The title of the contact person.</li>
+<li><code>Address</code>: The street address of the supplier.</li>
+<li><code>City</code>: The city where the supplier is located.</li>
+<li><code>Region</code>: The region where the supplier is located.</li>
+<li><code>PostalCode</code>: The postal code of the supplier's location.</li>
+<li><code>Country</code>: The country where the supplier is located.</li>
+<li><code>Phone</code>: The supplier's phone number.</li>
+<li><code>Fax</code>: The supplier's fax number (if any).</li>
+<li><code>HomePage</code>: The supplier's website (if any).</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Employees</strong>:</p>
+<ul>
+<li>
+<p><strong>Description</strong>: This table contains information about the company's employees.</p>
+</li>
+<li>
+<p><strong>Columns</strong>:</p>
+<ul>
+<li><code>EmployeeID</code>: A unique identifier for each employee.</li>
+<li><code>LastName</code>: The employee's last name.</li>
+<li><code>FirstName</code>: The employee's first name.</li>
+<li><code>Title</code>: The employee's job title.</li>
+<li><code>TitleOfCourtesy</code>: The employee's title of courtesy (e.g., Mr., Ms.).</li>
+<li><code>BirthDate</code>: The employee's birth date.</li>
+<li><code>HireDate</code>: The date the employee was hired.</li>
+<li><code>Address</code>: The street address of the employee.</li>
+<li><code>City</code>: The city where the employee is located.</li>
+<li><code>Region</code>: The region where the employee is located.</li>
+<li><code>PostalCode</code>: The postal code of the employee's location.</li>
+<li><code>Country</code>: The country where the employee is located.</li>
+<li><code>HomePhone</code>: The employee's home phone number.</li>
+<li><code>Extension</code>: The employee's extension number.</li>
+<li><code>Photo</code>: A photo of the employee.</li>
+<li><code>Notes</code>: Additional notes about the employee.</li>
+<li><code>ReportsTo</code>: The identifier of the employee's supervisor.</li>
+<li><code>PhotoPath</code>: The path to the employee's photo.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Categories</strong>:</p>
+<ul>
+<li>
+<p><strong>Description</strong>: This table categorizes the products available in the database.</p>
+</li>
+<li>
+<p><strong>Columns</strong>:</p>
+<ul>
+<li><code>CategoryID</code>: A unique identifier for each category.</li>
+<li><code>CategoryName</code>: The name of the category.</li>
+<li><code>Description</code>: A description of the category.</li>
+<li><code>Picture</code>: A picture representing the category.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Shippers</strong>:</p>
+<ul>
+<li>
+<p><strong>Description</strong>: This table lists the shipping companies used to ship orders.</p>
+</li>
+<li>
+<p><strong>Columns</strong>:</p>
+<ul>
+<li><code>ShipperID</code>: A unique identifier for each shipper.</li>
+<li><code>CompanyName</code>: The name of the shipping company.</li>
+<li><code>Phone</code>: The shipper's phone number.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Territories</strong>:</p>
+<ul>
+<li>
+<p><strong>Description</strong>: This table contains information about different sales territories.</p>
+</li>
+<li>
+<p><strong>Columns</strong>:</p>
+<ul>
+<li><code>TerritoryID</code>: A unique identifier for each territory.</li>
+<li><code>TerritoryDescription</code>: A description of the territory.</li>
+<li><code>RegionID</code>: The identifier of the region to which the territory belongs.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Region</strong>:</p>
+<ul>
+<li>
+<p><strong>Description</strong>: This table lists the regions where the company operates.</p>
+</li>
+<li>
+<p><strong>Columns</strong>:</p>
+<ul>
+<li><code>RegionID</code>: A unique identifier for each region.</li>
+<li><code>RegionDescription</code>: A description of the region.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="references_and_additional_resources">References and Additional Resources<a class="headerlink" href="#references_and_additional_resources" title="Permanent link">#</a></h4>
+<p>The Northwind database schema provides a comprehensive view of the data relationships and structures necessary for a company's operations. For further exploration and reference, the following resources are recommended:</p>
+<ul>
+<li>
+<p><a href="https://github.com/jpwhite3/northwind-SQLite3">Northwind Database GitHub Repository</a>: This repository provides the SQLite version of the Northwind database along with detailed instructions for setup and usage.</p>
+</li>
+<li>
+<p><a href="https://docs.microsoft.com/en-us/previous-versions/office/developer/office-2007/bb332055(v=office.12)">Official Microsoft Documentation</a>: Microsoft's official documentation for the Northwind database, including schema details and sample queries.</p>
+</li>
+<li>
+<p><a href="https://www.sqltutorial.org/sql-sample-database/">SQL Tutorial</a>: A tutorial that includes the Northwind database as a sample for learning SQL, with practical exercises and examples.</p>
+</li>
+</ul>
+<p>By understanding the structure and relationships within the Northwind database, you can practice and master SQL queries, data manipulation, and database management techniques. This makes the Northwind database an invaluable resource for learning and teaching SQL and database concepts.</p>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+      <p><b>Essential Guide to SQLite</b> <br>Copyright &#169; 2024 <a href="https://github.com/imarranz">Ibon Martínez-Arranz</a><br></p>
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/imarranz/essential-guide-to-sqlite" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../03_command/032_basic_commands.html" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="042_schema_and_relationships.html" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Ibon Martínez-Arranz" /><link rel="canonical" href="https://github.com/imarranz/essential-guide-to-sqlite/10_jupyter/101_installing_libraries.html" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Installing Necessary Libraries - Essential Guide to SQLite</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../css/custom.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Installing Necessary Libraries";
+        var mkdocs_page_input_path = "10_jupyter/101_installing_libraries.md";
+        var mkdocs_page_url = "/imarranz/essential-guide-to-sqlite/10_jupyter/101_installing_libraries.html";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/yaml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/python.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/bash.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../index.html" class="icon icon-home"> Essential Guide to SQLite
+        </a>
+        <div class="version">
+          1.0
+        </div><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../index.html">Essential Guide to SQLite</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Introduction to SQLite</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../01_introduction/011_overview_of_sqlite.html">Overview of SQLite</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../01_introduction/012_key_features.html">Key Features</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../01_introduction/013_use_cases.html">Use Cases</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Installing SQLite</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../02_installing/021_installation_on_linux.html">Installation on Linux</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../02_installing/022_first_steps.html">First Steps</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Using SQLite in Command Line</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../03_command/031_launching_sqlite_console.html">Launching SQLite Console</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../03_command/032_basic_commands.html">Basic Commands</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Introduction to the Northwind Database</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../04_northwind/041_overview_of_the_northwind_database.html">Overview of the Northwind Database</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../04_northwind/042_schema_and_relationships.html">Schema and Relationships</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Basic SQL Commands</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../05_basic/051_creating_tables.html">Creating Tables</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../05_basic/052_inserting_data.html">Inserting Data</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../05_basic/053_selecting_data.html">Selecting Data</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../05_basic/054_examples.html">Examples</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Advanced SQL Commands</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../06_advanced/061_updating_data.html">Updating Data</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../06_advanced/062_deleting_data.html">Deleting Data</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../06_advanced/063_using_where_clause.html">Using WHERE Clause</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../06_advanced/064_sorting_results_with_order_by.html">Sorting Results with ORDER BY</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../06_advanced/065_examples.html">Examples</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Complex Queries</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../07_complex/071_aggregate_functions.html">Aggregate Functions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../07_complex/072_grouping_results_with_group_by.html">Grouping Results with GROUP BY</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../07_complex/073_filtering_groups_with_having.html">Filtering Groups with HAVING</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../07_complex/074_examples.html">Examples</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Joins</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../08_joins/081_understanding_joins.html">Understanding Joins</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../08_joins/082_inner_join.html">Inner Join</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../08_joins/083_left_join.html">Left Join</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../08_joins/084_right_join.html">Right Join</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../08_joins/085_full_join.html">Full Join</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../08_joins/086_examples.html">Examples</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">SQLite with Python</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../09_python/091_setting_up_sqlite_in_python.html">Setting Up SQLite in Python</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../09_python/092_performing_basic_operations.html">Performing Basic Operations</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../09_python/093_handling_transactions.html">Handling Transactions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../09_python/094_error_handling.html">Error Handling</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../09_python/095_examples.html">Examples</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">SQLite with Jupyter</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" href="101_installing_libraries.html">Installing Necessary Libraries</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="102_running_sqlite_queries_in_jupyter.html">Running SQLite Queries in Jupyter</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="103_visualizing_data_with_sqlite_and_pandas.html">Visualizing Data with SQLite and Pandas</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Additional Resources and Further Reading</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../11_resources/111_official_documentation.html">Official Documentation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../11_resources/112_community_resources.html">Community Resources</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../11_resources/113_books_and_tutorials.html">Books and Tutorials</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Essential Guide to SQLite</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html" class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
+          <li>SQLite with Jupyter &raquo;</li>
+      <li class="breadcrumb-item active">Installing Necessary Libraries</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/imarranz/essential-guide-to-sqlite/edit/master/docs/10_jupyter/101_installing_libraries.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+    <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Breadcrumb Navigation">
+        <a href="../09_python/095_examples.html" class="btn btn-neutral float-left" title="Examples"><span class="icon icon-circle-arrow-left" aria-hidden="true"></span> Previous</a>
+        <a href="102_running_sqlite_queries_in_jupyter.html" class="btn btn-neutral float-right" title="Running SQLite Queries in Jupyter">Next <span class="icon icon-circle-arrow-right" aria-hidden="true"></span></a>
+    </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <div class="toc">
+<ul>
+<li><a href="#sqlite_with_jupyter">SQLite with Jupyter</a><ul>
+<li><a href="#installing_necessary_libraries">Installing Necessary Libraries</a><ul>
+<li><a href="#jupyter_notebook">Jupyter Notebook</a></li>
+<li><a href="#sqlite">SQLite</a></li>
+<li><a href="#ipython-sql">ipython-sql</a></li>
+<li><a href="#pandas">pandas</a></li>
+<li><a href="#matplotlib">matplotlib</a></li>
+<li><a href="#sqlalchemy">sqlalchemy</a></li>
+<li><a href="#summary_of_installation_commands">Summary of Installation Commands</a></li>
+<li><a href="#example_setting_up_a_jupyter_notebook">Example: Setting Up a Jupyter Notebook</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<hr />
+<h2 id="sqlite_with_jupyter">SQLite with Jupyter<a class="headerlink" href="#sqlite_with_jupyter" title="Permanent link">#</a></h2>
+<h3 id="installing_necessary_libraries">Installing Necessary Libraries<a class="headerlink" href="#installing_necessary_libraries" title="Permanent link">#</a></h3>
+<p>To use SQLite within Jupyter Notebooks, you need to install a few essential libraries. These libraries will allow you to create, manipulate, and visualize SQLite databases seamlessly within your Jupyter environment. This section will guide you through the process of installing the necessary libraries.</p>
+<h4 id="jupyter_notebook">Jupyter Notebook<a class="headerlink" href="#jupyter_notebook" title="Permanent link">#</a></h4>
+<p>If you haven't already installed Jupyter Notebook, you can install it using <code>pip</code>. Jupyter Notebook is a powerful tool for creating and sharing documents that contain live code, equations, visualizations, and narrative text.</p>
+<p><strong>Installation Command</strong>:</p>
+<pre><code class="language-bash">pip install notebook
+</code></pre>
+<p>To launch Jupyter Notebook, use the following command:</p>
+<pre><code class="language-bash">jupyter notebook
+</code></pre>
+<h4 id="sqlite">SQLite<a class="headerlink" href="#sqlite" title="Permanent link">#</a></h4>
+<p>SQLite itself is typically included with Python’s standard library, so you do not need to install SQLite separately. However, you can verify if SQLite is available by running the following command in your terminal or command prompt:</p>
+<p><strong>Verification Command</strong>:</p>
+<pre><code class="language-bash">sqlite3 --version
+</code></pre>
+<p>If SQLite is not installed, you can download it from the official <a href="https://www.sqlite.org/download.html">SQLite website</a> and follow the installation instructions for your operating system.</p>
+<h4 id="ipython-sql">ipython-sql<a class="headerlink" href="#ipython-sql" title="Permanent link">#</a></h4>
+<p><code>ipython-sql</code> is a SQL magic extension for IPython that allows you to write SQL queries directly within Jupyter Notebook cells. This extension makes it easy to interact with SQLite databases using SQL syntax.</p>
+<p><strong>Installation Command</strong>:</p>
+<pre><code class="language-bash">pip install ipython-sql
+</code></pre>
+<p>After installation, you can load the extension in a Jupyter Notebook cell using:</p>
+<pre><code class="language-python">%load_ext sql
+</code></pre>
+<h4 id="pandas">pandas<a class="headerlink" href="#pandas" title="Permanent link">#</a></h4>
+<p><code>pandas</code> is a powerful data manipulation and analysis library for Python. It provides data structures like DataFrame that are ideal for working with structured data, and it integrates well with SQL databases.</p>
+<p><strong>Installation Command</strong>:</p>
+<pre><code class="language-bash">pip install pandas
+</code></pre>
+<p>You can import <code>pandas</code> in your Jupyter Notebook using:</p>
+<pre><code class="language-python">import pandas as pd
+</code></pre>
+<h4 id="matplotlib">matplotlib<a class="headerlink" href="#matplotlib" title="Permanent link">#</a></h4>
+<p><code>matplotlib</code> is a plotting library for Python that allows you to create static, animated, and interactive visualizations. It is useful for visualizing the data retrieved from SQLite databases.</p>
+<p><strong>Installation Command</strong>:</p>
+<pre><code class="language-bash">pip install matplotlib
+</code></pre>
+<p>You can import <code>matplotlib</code> in your Jupyter Notebook using:</p>
+<pre><code class="language-python">import matplotlib.pyplot as plt
+</code></pre>
+<h4 id="sqlalchemy">sqlalchemy<a class="headerlink" href="#sqlalchemy" title="Permanent link">#</a></h4>
+<p><code>sqlalchemy</code> is a SQL toolkit and Object-Relational Mapping (ORM) library for Python. It provides a full suite of well-known enterprise-level persistence patterns and is designed for efficient and high-performing database access.</p>
+<p><strong>Installation Command</strong>:</p>
+<pre><code class="language-bash">pip install sqlalchemy
+</code></pre>
+<p>You can import <code>sqlalchemy</code> in your Jupyter Notebook using:</p>
+<pre><code class="language-python">from sqlalchemy import create_engine
+</code></pre>
+<h4 id="summary_of_installation_commands">Summary of Installation Commands<a class="headerlink" href="#summary_of_installation_commands" title="Permanent link">#</a></h4>
+<p>For convenience, here are all the installation commands together:</p>
+<pre><code class="language-bash">pip install notebook
+pip install ipython-sql
+pip install pandas
+pip install matplotlib
+pip install sqlalchemy
+</code></pre>
+<h4 id="example_setting_up_a_jupyter_notebook">Example: Setting Up a Jupyter Notebook<a class="headerlink" href="#example_setting_up_a_jupyter_notebook" title="Permanent link">#</a></h4>
+<p>Here is an example of setting up a Jupyter Notebook to work with SQLite:</p>
+<p><strong>1. Install the necessary libraries</strong> (if not already installed):</p>
+<pre><code class="language-bash">pip install notebook ipython-sql pandas matplotlib sqlalchemy
+</code></pre>
+<p><strong>2. Create a new Jupyter Notebook</strong> and run the following code cells:</p>
+<pre><code class="language-python"># Load the SQL extension
+%load_ext sql
+
+# Import necessary libraries
+import sqlite3
+import pandas as pd
+import matplotlib.pyplot as plt
+from sqlalchemy import create_engine
+
+# Create an SQLite database in memory
+engine = create_engine('sqlite:///:memory:')
+
+# Create a connection to the database
+conn = sqlite3.connect('example.db')
+
+# Create a cursor object
+cursor = conn.cursor()
+
+# Create a sample table
+cursor.execute('''
+CREATE TABLE IF NOT EXISTS customers (
+    CustomerID INTEGER PRIMARY KEY,
+    CustomerName TEXT NOT NULL,
+    ContactName TEXT,
+    Country TEXT
+)
+''')
+
+# Insert sample data
+cursor.execute('''
+INSERT INTO customers (CustomerName, ContactName, Country)
+VALUES ('Alfreds Futterkiste', 'Maria Anders', 'Germany')
+''')
+
+# Commit the changes
+conn.commit()
+
+# Query the table
+df = pd.read_sql('SELECT * FROM customers', conn)
+
+# Display the DataFrame
+print(df)
+
+# Close the cursor and connection
+cursor.close()
+conn.close()
+</code></pre>
+<p>In this example, we install and import the necessary libraries, create a connection to an SQLite database, create a table, insert data, and query the table to display the results in a DataFrame.</p>
+<p>By following these steps, you can set up a Jupyter Notebook to work with SQLite and perform various data analysis tasks using SQL and Python.</p>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+      <p><b>Essential Guide to SQLite</b> <br>Copyright &#169; 2024 <a href="https://github.com/imarranz">Ibon Martínez-Arranz</a><br></p>
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/imarranz/essential-guide-to-sqlite" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../09_python/095_examples.html" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="102_running_sqlite_queries_in_jupyter.html" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

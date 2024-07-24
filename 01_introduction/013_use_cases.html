@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Ibon Martínez-Arranz" /><link rel="canonical" href="https://github.com/imarranz/essential-guide-to-sqlite/01_introduction/013_use_cases.html" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Use Cases - Essential Guide to SQLite</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../css/custom.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Use Cases";
+        var mkdocs_page_input_path = "01_introduction/013_use_cases.md";
+        var mkdocs_page_url = "/imarranz/essential-guide-to-sqlite/01_introduction/013_use_cases.html";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/yaml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/python.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/bash.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../index.html" class="icon icon-home"> Essential Guide to SQLite
+        </a>
+        <div class="version">
+          1.0
+        </div><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../index.html">Essential Guide to SQLite</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Introduction to SQLite</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="011_overview_of_sqlite.html">Overview of SQLite</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="012_key_features.html">Key Features</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="013_use_cases.html">Use Cases</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Installing SQLite</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../02_installing/021_installation_on_linux.html">Installation on Linux</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../02_installing/022_first_steps.html">First Steps</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Using SQLite in Command Line</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../03_command/031_launching_sqlite_console.html">Launching SQLite Console</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../03_command/032_basic_commands.html">Basic Commands</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Introduction to the Northwind Database</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../04_northwind/041_overview_of_the_northwind_database.html">Overview of the Northwind Database</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../04_northwind/042_schema_and_relationships.html">Schema and Relationships</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Basic SQL Commands</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../05_basic/051_creating_tables.html">Creating Tables</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../05_basic/052_inserting_data.html">Inserting Data</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../05_basic/053_selecting_data.html">Selecting Data</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../05_basic/054_examples.html">Examples</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Advanced SQL Commands</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../06_advanced/061_updating_data.html">Updating Data</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../06_advanced/062_deleting_data.html">Deleting Data</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../06_advanced/063_using_where_clause.html">Using WHERE Clause</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../06_advanced/064_sorting_results_with_order_by.html">Sorting Results with ORDER BY</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../06_advanced/065_examples.html">Examples</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Complex Queries</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../07_complex/071_aggregate_functions.html">Aggregate Functions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../07_complex/072_grouping_results_with_group_by.html">Grouping Results with GROUP BY</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../07_complex/073_filtering_groups_with_having.html">Filtering Groups with HAVING</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../07_complex/074_examples.html">Examples</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Joins</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../08_joins/081_understanding_joins.html">Understanding Joins</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../08_joins/082_inner_join.html">Inner Join</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../08_joins/083_left_join.html">Left Join</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../08_joins/084_right_join.html">Right Join</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../08_joins/085_full_join.html">Full Join</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../08_joins/086_examples.html">Examples</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">SQLite with Python</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../09_python/091_setting_up_sqlite_in_python.html">Setting Up SQLite in Python</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../09_python/092_performing_basic_operations.html">Performing Basic Operations</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../09_python/093_handling_transactions.html">Handling Transactions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../09_python/094_error_handling.html">Error Handling</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../09_python/095_examples.html">Examples</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">SQLite with Jupyter</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../10_jupyter/101_installing_libraries.html">Installing Necessary Libraries</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../10_jupyter/102_running_sqlite_queries_in_jupyter.html">Running SQLite Queries in Jupyter</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../10_jupyter/103_visualizing_data_with_sqlite_and_pandas.html">Visualizing Data with SQLite and Pandas</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Additional Resources and Further Reading</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../11_resources/111_official_documentation.html">Official Documentation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../11_resources/112_community_resources.html">Community Resources</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../11_resources/113_books_and_tutorials.html">Books and Tutorials</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Essential Guide to SQLite</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html" class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
+          <li>Introduction to SQLite &raquo;</li>
+      <li class="breadcrumb-item active">Use Cases</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/imarranz/essential-guide-to-sqlite/edit/master/docs/01_introduction/013_use_cases.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+    <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Breadcrumb Navigation">
+        <a href="012_key_features.html" class="btn btn-neutral float-left" title="Key Features"><span class="icon icon-circle-arrow-left" aria-hidden="true"></span> Previous</a>
+        <a href="../02_installing/021_installation_on_linux.html" class="btn btn-neutral float-right" title="Installation on Linux">Next <span class="icon icon-circle-arrow-right" aria-hidden="true"></span></a>
+    </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <div class="toc">
+<ul>
+<li><a href="#introduction_to_sqlite">Introduction to SQLite</a><ul>
+<li><a href="#use_cases">Use Cases</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<hr />
+<h2 id="introduction_to_sqlite">Introduction to SQLite<a class="headerlink" href="#introduction_to_sqlite" title="Permanent link">#</a></h2>
+<h3 id="use_cases">Use Cases<a class="headerlink" href="#use_cases" title="Permanent link">#</a></h3>
+<p>SQLite is a versatile database management system with a wide range of applications, particularly in the field of Data Science. Below are some detailed use cases that highlight how SQLite can be effectively utilized:</p>
+<ol>
+<li>
+<p><strong>Exploratory Data Analysis (EDA)</strong>:</p>
+<ul>
+<li>
+<p><strong>Description</strong>: Exploratory Data Analysis is a crucial step in the data science process where data scientists seek to understand the underlying patterns, distributions, and anomalies in their data.</p>
+</li>
+<li>
+<p><strong>SQLite's Role</strong>: SQLite's robust SQL querying capabilities make it an excellent tool for EDA. Data scientists can perform complex queries, aggregations, and filtering operations to uncover insights and inform further analysis.</p>
+</li>
+<li>
+<p><strong>Example</strong>: Using SQLite, a data scientist can quickly load a dataset, perform summary statistics, create pivot tables, and visualize data distributions without needing to switch between different tools.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Data Cleaning and Transformation</strong>:</p>
+<ul>
+<li>
+<p><strong>Description</strong>: Data cleaning involves rectifying inconsistencies, handling missing values, and ensuring data integrity. Transformation involves reshaping and aggregating data to prepare it for analysis.</p>
+</li>
+<li>
+<p><strong>SQLite's Role</strong>: With its powerful SQL support, SQLite can efficiently handle data cleaning and transformation tasks. Data scientists can use SQL commands to filter out irrelevant data, normalize data formats, and create new derived columns.</p>
+</li>
+<li>
+<p><strong>Example</strong>: A data scientist might use SQLite to clean a dataset by removing duplicates, filling missing values with appropriate defaults, and normalizing textual data to a consistent format.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Data Integration</strong>:</p>
+<ul>
+<li>
+<p><strong>Description</strong>: Data integration involves combining data from multiple sources into a cohesive dataset. This is often a necessary step before analysis or machine learning model training.</p>
+</li>
+<li>
+<p><strong>SQLite's Role</strong>: SQLite serves as an intermediary storage solution, enabling the seamless integration of data from various sources such as CSV files, APIs, and other databases. This ensures that the data is properly structured and ready for analysis.</p>
+</li>
+<li>
+<p><strong>Example</strong>: A data scientist can use SQLite to import data from multiple CSV files, join them based on common keys, and create a unified dataset that combines customer data with transaction history.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Machine Learning Pipelines</strong>:</p>
+<ul>
+<li>
+<p><strong>Description</strong>: Machine learning pipelines involve multiple stages, including data preprocessing, feature extraction, model training, and evaluation. Efficient data management is critical at each stage.</p>
+</li>
+<li>
+<p><strong>SQLite's Role</strong>: SQLite provides a reliable and easy-to-query storage solution for managing datasets within machine learning workflows. Its transactional integrity ensures data consistency throughout the pipeline.</p>
+</li>
+<li>
+<p><strong>Example</strong>: During a machine learning project, a data scientist might use SQLite to store preprocessed data, manage feature extraction results, and keep track of different model versions and their performance metrics.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Portable Data Storage</strong>:</p>
+<ul>
+<li>
+<p><strong>Description</strong>: In collaborative data science projects, it's often necessary to share datasets and results with team members or move them between different environments.</p>
+</li>
+<li>
+<p><strong>SQLite's Role</strong>: SQLite's single-file database format makes it exceptionally portable, facilitating easy sharing and version control of datasets. This portability enhances collaboration and ensures that all team members work with the same data.</p>
+</li>
+<li>
+<p><strong>Example</strong>: A data scientist can package the entire dataset and analysis results into a single SQLite file and share it with colleagues, ensuring that everyone has access to the same data and schema.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Real-time Data Analysis</strong>:</p>
+<ul>
+<li>
+<p><strong>Description</strong>: Real-time data analysis involves processing and analyzing data as it is generated, which is crucial for applications like monitoring systems and live dashboards.</p>
+</li>
+<li>
+<p><strong>SQLite's Role</strong>: SQLite can be used to manage in-memory databases for real-time data processing. This allows for fast access and manipulation of data without the need for persistent storage.</p>
+</li>
+<li>
+<p><strong>Example</strong>: In a live monitoring system, SQLite can be used to store and analyze incoming data streams, providing real-time insights and triggering alerts based on predefined conditions.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Education and Training</strong>:</p>
+<ul>
+<li>
+<p><strong>Description</strong>: SQLite is widely used as an educational tool to teach SQL and database management concepts due to its simplicity and ease of use.</p>
+</li>
+<li>
+<p><strong>SQLite's Role</strong>: Students and educators can use SQLite to create and manage databases without the need for complex setups. Its lightweight nature and comprehensive SQL support make it an ideal learning tool.</p>
+</li>
+<li>
+<p><strong>Example</strong>: In a data science course, students might use SQLite to practice writing SQL queries, designing database schemas, and performing data analysis tasks on sample datasets.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Mobile and Embedded Applications</strong>:</p>
+<ul>
+<li>
+<p><strong>Description</strong>: Many mobile and embedded applications require a lightweight and efficient database solution to store and manage data locally.</p>
+</li>
+<li>
+<p><strong>SQLite's Role</strong>: SQLite's small footprint and zero-configuration setup make it perfect for mobile apps and embedded systems where resources are limited.</p>
+</li>
+<li>
+<p><strong>Example</strong>: A mobile application might use SQLite to store user preferences, offline data, and application logs, ensuring that the app functions smoothly even without a network connection.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Data Backup and Archiving</strong>:</p>
+<ul>
+<li>
+<p><strong>Description</strong>: Regular data backup and archiving are essential for data preservation and recovery in case of system failures.</p>
+</li>
+<li>
+<p><strong>SQLite's Role</strong>: SQLite's single-file format simplifies the process of backing up and archiving data. The entire database can be copied or moved as a single file, ensuring easy and reliable data backup.</p>
+</li>
+<li>
+<p><strong>Example</strong>: A data scientist can use SQLite to create periodic backups of critical datasets, storing them securely for future recovery and analysis.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Prototyping and Development</strong>:</p>
+<ul>
+<li>
+<p><strong>Description</strong>: During the development of data-driven applications, rapid prototyping and testing of database interactions are often required.</p>
+</li>
+<li>
+<p><strong>SQLite's Role</strong>: SQLite allows developers and data scientists to quickly prototype database schemas and test SQL queries without the overhead of setting up a full-fledged database server.</p>
+</li>
+<li>
+<p><strong>Example</strong>: In the early stages of a project, a data scientist might use SQLite to design and test database schemas, ensuring that the data model meets the application's requirements before migrating to a production database.</p>
+</li>
+</ul>
+</li>
+</ol>
+<p>In summary, SQLite's versatility, ease of use, and robust SQL capabilities make it an invaluable tool for a wide range of data science applications. Its ability to handle tasks such as exploratory data analysis, data cleaning, integration, machine learning pipelines, and more ensures that data scientists can efficiently manage and analyze their data without unnecessary complexity.</p>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+      <p><b>Essential Guide to SQLite</b> <br>Copyright &#169; 2024 <a href="https://github.com/imarranz">Ibon Martínez-Arranz</a><br></p>
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/imarranz/essential-guide-to-sqlite" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="012_key_features.html" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../02_installing/021_installation_on_linux.html" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
