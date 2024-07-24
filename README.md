@@ -2,7 +2,7 @@
 # Essential Guide to SQLite
 
 <p align="center">
-  <img src="book/figures/essential-guide-to-sqlite-logo.png" alt="essential-guide-to-sqlite">
+  <img src="book/images/essential-guide-to-sqlite-logo.png" alt="essential-guide-to-sqlite">
 </p>
 
 <p align="center">
