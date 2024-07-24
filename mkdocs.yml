@@ -2,7 +2,12 @@ site_name: Essential Guide to SQLite
 site_description: 'Essential Guide to SQLite'
 site_author: Ibon Martínez-Arranz
 site_url: https://github.com/imarranz/essential-guide-to-sqlite
+
+repo_name: imarranz/essential-guide-to-sqlite
 repo_url: https://github.com/imarranz/essential-guide-to-sqlite
+
+edit_uri: edit/main/book/
+
 
 docs_dir: book
 site_dir: web
