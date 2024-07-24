@@ -1,7 +1,28 @@
 
 # Essential Guide to SQLite
 
-![essential-guide-to-sqlite](path/to/your/image.png)
+<p align="center">
+  <img src="bbok/figures/essential-guide-to-sqlite-logo.png" alt="essential-guide-to-sqlite">
+</p>
+
+<p align="center">
+  <a href="https://github.com/imarranz/essential-guide-to-sqlite/pulls">
+    <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?longCache=true" alt="Pull Requests">
+  </a>
+  <a href="LICENSE.md">
+    <img src="https://img.shields.io/badge/License-MIT-red.svg?longCache=true" alt="MIT License">
+  </a>
+   <a href="https://github.com/imarranz/essential-guide-to-sqlite"><img src="https://img.shields.io/github/stars/imarranz/essential-guide-to-sqlite" alt="Stars"/>
+  </a>
+   <a href="https://imarranz.github.io/essential-guide-to-sqlite/"><img src="https://img.shields.io/website?url=https%3A%2F%2Fimarranz.github.io%2Fessential-guide-to-sqlite%2F&up_message=Essential%20Guide%20to%20SQLite" alt="Web"/>
+  </a>
+</p>
+
+<p align="center">
+  <a href="https://twitter.com/imarranz" target="_blank">
+    <img src="https://img.shields.io/twitter/follow/imarranz.svg?logo=twitter">
+  </a>
+</p>
 
 Welcome to the Essential Guide to SQLite repository, a comprehensive guide designed to harness the power of SQLite for database management. This manual covers a wide range of topics, from database creation to advanced query techniques, making it an indispensable resource for developers, analysts, and anyone interested in learning SQLite.
 
@@ -11,21 +32,7 @@ This repository contains the Markdown files for each chapter of the book, which 
 
   - `book/`: Contains all Markdown files for each chapter of the guide.
 
-  - `notebooks/`: Stores Jupyter notebooks with the code and analyses presented in the book.
-
-    - `essential-guide-to-sqlite.ipynb`: Notebook with practical implementations and code examples.
-
-  - `templates/`: Directory with the LaTeX template used to format the PDF output.
-
-    - `essential-guide-to-sqlite-template.tex`: LaTeX template for the final document.
-
-  - `figures/`: Stores figures or images referenced in the book.
-
-  - `book.info`: Contains metadata about the book, such as author, title, and publication date.
-
   - `LICENSE.md`: Describes the license under which the content of the repository is distributed.
-
-  - `makefile`: Script to automate the compilation of Markdown files into a PDF document.
 
   - `README.md`: Provides an overview of the project, instructions for compiling the book, the repository structure, and other necessary information for users and contributors.
 
