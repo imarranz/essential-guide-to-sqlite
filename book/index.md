@@ -1,5 +1,6 @@
 
 # Introduction
+
 Welcome to my in-depth manual on SQLite, a powerful and lightweight relational database management system. SQLite is widely used in data science and machine learning applications due to its simplicity, efficiency, and portability. It provides a robust and easy-to-use platform for data storage, manipulation, and retrieval, making it an essential tool for data scientists and machine learning practitioners who need to manage and analyze large datasets efficiently. Whether you're building predictive models, conducting exploratory data analysis, or integrating data into machine learning workflows, SQLite offers the capabilities to support your data-driven projects.
 
 <div class="cover">
@@ -9,7 +10,7 @@ Welcome to my in-depth manual on SQLite, a powerful and lightweight relational d
         </div>
         <div class="cover-text">
             <p style="color: #403724; font-size: 1.2rem;"><b>Essential Guide to SQLite</b></p>
-            <p>Welcome to my guide on SQLite, a lightweight and powerful relational database management system. Widely used in data science and data analysis, SQLite is valued for its simplicity, efficiency, and portability. It provides a robust platform for data storage, manipulation, and retrieval, making it essential for data scientists managing and analyzing large datasets. Whether you're conducting exploratory data analysis or integrating data into machine learning workflows, SQLite supports your data-driven projects effectively.</p>
+            <p>Welcome to my guide on SQLite, a lightweight and effective relational database management system. It's prized in data science for its simplicity, efficiency, and portability. SQLite facilitates data storage, manipulation, and retrieval, making it crucial for data scientists handling large datasets and performing exploratory analysis or data integration in machine learning workflows.</p>
             <p align="left">
             <a href="https://github.com/imarranz/essential-guide-to-sqlite/pulls">
                 <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?longCache=true" alt="Pull Requests">
@@ -25,7 +26,7 @@ Welcome to my in-depth manual on SQLite, a powerful and lightweight relational d
             <a href="https://imarranz.github.io/essential-guide-to-sqlite/">
                 <img src="https://img.shields.io/website?url=https%3A%2F%2Fimarranz.github.io%2Fessential-guide-to-sqlite%2F&up_message=Essential%20Guide%20to%20SQLite" alt="Web"/>
             </a>
-            <a href="https://drive.google.com/file/d/1jEubPytIIVqD0EfTxZOa3jpu4TokHyHR/view?usp=drive_link">
+            <a href="https://drive.google.com/file/d/1BLvfWtKyP23keRZl1EnvCpXd_eIZd3rE/view?usp=drive_link">
                 <img src="https://img.shields.io/badge/Google%20Drive-4285F4?logo=googledrive&logoColor=fff" alt="Download"/>
             </a>
             </p>
