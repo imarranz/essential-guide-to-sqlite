@@ -76,15 +76,16 @@ To continue learning about SQLite, the following resources are recommended:
 
 ## Contributions
 
-Contributions to improve the manual are welcome. Follow these steps to contribute:
+Contributions to improve the manual are welcome. Please follow these steps to contribute:
 
-  1. **Open an Issue**: Describe the contribution you want to make.
+  1. :mailbox: **Open an Issue**: Start by opening an issue in this GitHub repository. Describe the contribution you want to make, whether it's adding a new book, improving an existing one, or providing additional study resources.
 
-  2. **Fork and Edit**: Fork the repository, make your changes, and submit a pull request.
+  2. :fork_and_knife: **Fork and Edit**: Fork this repository, make your changes, and then submit a pull request with your contributions. <a href="https://github.com/imarranz/essential-guide-to-sqlite/pulls"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?longCache=true" alt="Pull Requests"></a>
 
-  3. **Review**: Your contribution will be reviewed and, if everything is in order, merged into the project.
+  3. :mag: **Review**: I will review your submission, and if everything is in order, your contributions will be merged into the project.
 
-  4. **Credits**: All contributors will be properly credited for their work.
+  4. :trophy: **Credit**: All contributors will be duly credited for their work. We believe in recognizing the efforts of the community members.
+
 
 ## License
 
@@ -92,8 +93,9 @@ This project is licensed under the [MIT License](LICENSE.md).
 
 ## Contact
 
-For more information, suggestions, or questions, you can contact me via:
-
-  - [LinkedIn](https://www.linkedin.com)
-
-  - [GitHub](https://www.github.com)
+For more information, suggestions, or questions, you can contact me via
+<p align="center">
+<a href="https://www.linkedin.com/in/ibon-mart%C3%ADnez-arranz/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"></a>&nbsp;
+<a href="https://github.com/imarranz/"><img src="https://img.shields.io/badge/GitHub-FFFFFF.svg?&style=for-the-badge&logo=Github&logoColor=black" alt="GitHub"></a>&nbsp;
+<a href="https://twitter.com/imarranz/"><img src="https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white" alt="X"></a>
+</p>
