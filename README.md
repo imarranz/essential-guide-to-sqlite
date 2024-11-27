@@ -32,6 +32,14 @@ This repository contains the Markdown files for each chapter of the book, which 
 
   - `book/`: Contains all Markdown files for each chapter of the guide.
 
+  - `pdf/`: Directory that stores the generated PDF files. This directory is the final destination for the compiled documents, where users can find the book in PDF format ready for reading or distribution.
+
+  - `templates/`: Contains the LaTeX templates used for formatting the document. This directory includes style files that define the appearance of the book, such as page layout, typography settings, and graphic elements that are applied during the compilation process to ensure visual consistency throughout the document.
+
+  - `book.info`: Contains metadata about the book, including details such as title, author, document version, and other relevant metadata.
+
+  - `makefile`: Provides the necessary instructions to compile and generate the book from the source files using make. This file facilitates the automation of the compilation process, allowing the final document to be generated in PDF format with a single command.
+
   - `LICENSE.md`: Describes the license under which the content of the repository is distributed.
 
   - `README.md`: Provides an overview of the project, instructions for compiling the book, the repository structure, and other necessary information for users and contributors.
