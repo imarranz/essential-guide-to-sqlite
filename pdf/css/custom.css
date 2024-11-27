@@ -1,0 +1,172 @@
+
+/* Include Google Fonts */
+/* https://fonts.google.com */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bitter:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400&display=swap');
+
+body {
+    font-family: 'Nunito Sans';
+    line-height: 2.0;
+}
+
+h1 {
+    color: #C87C39;
+}
+h2 {
+    color: #F3BE79;
+}
+
+h3 {
+    color: #4C98A1;
+}
+
+h4 {
+    color: #2F5C6D;
+}
+
+/* a:link {
+    color: #71B547;
+}
+a:hover {
+    font-weight: bold;
+}
+a:visited {
+
+}*/
+
+.boxed {
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin: 20px 0;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Info Box */
+.info {
+    border: 2px solid #4C98A1; /* Un color que complementa los colores existentes */
+    padding: 15px;
+    margin: 15px 0;
+    background-color: #f4fbfc; /* Un color suave y claro que complementa el esquema */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+/* Warning Box */
+.warning {
+    border: 2px solid #d35400;
+    padding: 15px;
+    margin: 15px 0;
+    background-color: #fef8e7 !warning;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+/* Error Box */
+.error {
+    border: 2px solid #e74c3c;
+    padding: 15px;
+    margin: 15px 0;
+    background-color: #fdecea !error;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+/* Tip Block */
+.tip {
+    border: 2px solid #27ae60;
+    padding: 15px;
+    margin: 15px 0;
+    background-color: #e8f9f0 !tip;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+/* Important Block */
+.important {
+    border: 2px solid #E67E22;
+    padding: 15px;
+    margin: 15px 0;
+    background-color: #FCF3E3 !important;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+
+.centered-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0; /* Optional: Adds vertical margin for spacing */
+}
+
+.centered-image img {
+    width: 50%;
+    height: auto; /* Maintains the aspect ratio */
+}
+
+/* Cover Block */
+.cover {
+    border: 2px solid #C87C39; /* #27ae60; */
+    padding: 15px;
+    margin: 15px 0;
+    background-color: #ffd9aa; /*#e8f9f0; */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.cover-content {
+    display: flex;
+    align-items: center;
+}
+
+.cover-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cover-image img {
+    width: 100%;
+    max-width: auto; /* Adjust the max-width as needed */
+    height: auto;
+    border-radius: 5px; /* Optional: Add rounded corners to the image */
+}
+
+.cover-text {
+    flex: 2;
+    padding-left: 20px;
+}
+
+/* Style for all tables */
+/* https://developer.mozilla.org/en-US/docs/Web/HTML/Element/thead*/
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 1em;
+    text-align: left;
+}
+
+th {
+    background-color: #2C3E50; /* Dark background for header */
+    color: #fff; /* White text for header */
+    padding: 12px 15px;
+}
+
+table tbody td {
+    border: 5px solid #2C3E50; /* Border for table cells */
+    padding: 12px 15px;
+}
+
+table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3; /* Zebra striping for rows */
+}
+
+table tbody tr:hover {
+    background-color: #f1f1f1; /* Hover effect for rows */
+}
